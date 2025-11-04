@@ -1,10 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  experimental: {
-    appDir: true,
-  },
   images: {
-    domains: ['localhost'],
+    domains: ['localhost', 'via.placeholder.com'],
+  },
+  // Enable experimental features if needed
+  experimental: {
+    // Add any experimental features here if needed
   },
 };
 
