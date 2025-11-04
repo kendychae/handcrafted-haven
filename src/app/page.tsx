@@ -131,7 +131,7 @@ export default function Home() {
               Why Choose Handcrafted Haven?
             </h2>
             <p className="body-large max-w-2xl mx-auto">
-              We're more than just a marketplace – we're a community celebrating creativity, quality, and authentic craftsmanship.
+              We&apos;re more than just a marketplace – we&apos;re a community celebrating creativity, quality, and authentic craftsmanship.
             </p>
           </div>
 
@@ -279,7 +279,7 @@ export default function Home() {
         <div className="container text-center">
           <h2 className="heading-2 mb-4 text-white">Ready to Start Your Journey?</h2>
           <p className="body-large mb-8 max-w-2xl mx-auto opacity-90">
-            Whether you're looking for unique items or want to share your craft with the world, 
+            Whether you&apos;re looking for unique items or want to share your craft with the world,
             Handcrafted Haven is the perfect place to start.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
