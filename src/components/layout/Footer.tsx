@@ -161,7 +161,7 @@ const Footer = () => {
 
             {/* Copyright & Legal */}
             <div className="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-6 text-sm text-neutral-600">
-              <p>&copy; 2024 Handcrafted Haven. All rights reserved.</p>
+              <p>&copy; 2025 Handcrafted Haven. All rights reserved.</p>
               <div className="flex space-x-4">
                 <Link href="/privacy" className="hover:text-primary-600">
                   Privacy Policy

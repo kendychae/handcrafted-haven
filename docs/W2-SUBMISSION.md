@@ -1,6 +1,6 @@
 # WDD430 Week 2 Group Project Submission
 
-**Student:** Kendahl Bingham 
+**Student:** Kendahl Bingham
 **Course:** WDD430 - Advanced Web Development  
 **Institution:** Brigham Young University - Idaho  
 **Date:** November 4, 2025
@@ -12,6 +12,7 @@
 ### Participants
 
 - **Kendahl Bingham** - Project Lead & Full-Stack Developer
+
 ### Meeting Content Summary
 
 **Duration:** Multiple planning and development sessions over Week 1-2  
@@ -291,4 +292,4 @@ This individual project submission demonstrates a complete, production-ready art
 
 ---
 
-*Submitted by Kendahl Bingham for WDD430 Week 2 Group Project Assignment*
+_Submitted by Kendahl Bingham for WDD430 Week 2 Group Project Assignment_
