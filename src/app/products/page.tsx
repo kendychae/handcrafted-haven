@@ -1,4 +1,7 @@
+'use client';
+
 import Link from 'next/link';
+import { useState, useMemo } from 'react';
 
 const ProductsPage = () => {
   const products = [
@@ -62,6 +65,40 @@ const ProductsPage = () => {
   const categories = ['All', 'Pottery', 'Jewelry', 'Textiles', 'Woodwork', 'Glass', 'Leather'];
   const sortOptions = ['Featured', 'Price: Low to High', 'Price: High to Low', 'Newest', 'Best Rated'];
 
+  // State for filtering and search
+  const [selectedCategory, setSelectedCategory] = useState('All');
+  const [searchTerm, setSearchTerm] = useState('');
+  const [sortBy, setSortBy] = useState('Featured');
+
+  // Filter and sort products
+  const filteredProducts = useMemo(() => {
+    let filtered = products.filter(product => {
+      const matchesCategory = selectedCategory === 'All' || product.category === selectedCategory;
+      const matchesSearch = product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                           product.artist.toLowerCase().includes(searchTerm.toLowerCase());
+      return matchesCategory && matchesSearch;
+    });
+
+    // Sort products
+    switch (sortBy) {
+      case 'Price: Low to High':
+        filtered.sort((a, b) => a.price - b.price);
+        break;
+      case 'Price: High to Low':
+        filtered.sort((a, b) => b.price - a.price);
+        break;
+      case 'Best Rated':
+        filtered.sort((a, b) => b.rating - a.rating);
+        break;
+      case 'Featured':
+      default:
+        filtered.sort((a, b) => (b.featured ? 1 : 0) - (a.featured ? 1 : 0));
+        break;
+    }
+
+    return filtered;
+  }, [products, selectedCategory, searchTerm, sortBy]);
+
   return (
     <div className="container section-padding">
       {/* Page Header */}
@@ -83,6 +120,8 @@ const ProductsPage = () => {
                 type="text"
                 placeholder="Search products..."
                 className="input pr-10"
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
               />
               <div className="absolute inset-y-0 right-0 flex items-center pr-3">
                 <svg className="h-5 w-5 text-neutral-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -97,8 +136,9 @@ const ProductsPage = () => {
             {categories.map((category) => (
               <button
                 key={category}
+                onClick={() => setSelectedCategory(category)}
                 className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
-                  category === 'All'
+                  category === selectedCategory
                     ? 'bg-primary-600 text-white'
                     : 'bg-neutral-100 text-neutral-700 hover:bg-neutral-200'
                 }`}
@@ -110,9 +150,13 @@ const ProductsPage = () => {
 
           {/* Sort Dropdown */}
           <div className="w-full lg:w-auto">
-            <select className="select min-w-[200px]">
+            <select 
+              className="select min-w-[200px]"
+              value={sortBy}
+              onChange={(e) => setSortBy(e.target.value)}
+            >
               {sortOptions.map((option) => (
-                <option key={option} value={option.toLowerCase().replace(/[^a-z0-9]/g, '-')}>
+                <option key={option} value={option}>
                   {option}
                 </option>
               ))}
@@ -121,9 +165,19 @@ const ProductsPage = () => {
         </div>
       </div>
 
+      {/* Results Count */}
+      <div className="mb-6">
+        <p className="text-neutral-600">
+          Showing {filteredProducts.length} of {products.length} products
+          {selectedCategory !== 'All' && ` in ${selectedCategory}`}
+          {searchTerm && ` matching "${searchTerm}"`}
+        </p>
+      </div>
+
       {/* Products Grid */}
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-12">
-        {products.map((product) => (
+        {filteredProducts.length > 0 ? (
+          filteredProducts.map((product) => (
           <Link
             key={product.id}
             href={`/products/${product.id}`}
@@ -189,7 +243,29 @@ const ProductsPage = () => {
               </div>
             </div>
           </Link>
-        ))}
+        ))
+        ) : (
+          <div className="col-span-full text-center py-12">
+            <div className="w-24 h-24 bg-neutral-100 rounded-full flex items-center justify-center mx-auto mb-6">
+              <span className="text-4xl">🔍</span>
+            </div>
+            <h3 className="text-xl font-semibold text-neutral-900 mb-2">No products found</h3>
+            <p className="text-neutral-600 mb-6">
+              {searchTerm 
+                ? `No products match "${searchTerm}"`
+                : `No products in ${selectedCategory} category`}
+            </p>
+            <button 
+              onClick={() => {
+                setSelectedCategory('All');
+                setSearchTerm('');
+              }}
+              className="bg-primary-600 text-white px-6 py-3 rounded-lg hover:bg-primary-700 transition-colors"
+            >
+              Clear Filters
+            </button>
+          </div>
+        )}
       </div>
 
       {/* Load More */}
