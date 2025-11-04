@@ -2,7 +2,7 @@
 
 ## Student Information
 
-**Name:** Kendahl Bingham  
+**Name:** Kendy Chae  
 **Course:** WDD430 - Advanced Web Development  
 **Institution:** Brigham Young University - Idaho  
 **Semester:** Fall 2025
@@ -195,7 +195,9 @@ handcrafted-haven/
 
 ### Live URL
 
-The application is configured for deployment on Vercel. Deployment steps are documented in `/docs/deployment-guide.md`.
+**Deployed Application:** [https://handcrafted-haven-lemon-iota.vercel.app/](https://handcrafted-haven-lemon-iota.vercel.app/)
+
+The application is successfully deployed on Vercel with automatic builds from GitHub. Deployment steps are documented in `/docs/deployment-guide.md`.
 
 ### Repository
 
