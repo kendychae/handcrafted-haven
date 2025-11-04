@@ -2,11 +2,11 @@
 
 ## Student Information
 
-**Name:** Kendy Chae  
+**Name:** Kendahl Bingham  
 **Course:** WDD430 - Advanced Web Development  
 **Institution:** Brigham Young University - Idaho  
-**Semester:** Fall 2024  
-**Submission Date:** November 4, 2024
+**Semester:** Fall 2025
+**Submission DUE:** November 8, 2025
 
 ---
 
@@ -14,7 +14,7 @@
 
 **Project Name:** Handcrafted Haven  
 **Project Type:** Artisan Marketplace Web Application  
-**Individual Submission:** Yes (completing group project individually)
+**Individual Submission:** Yes (completed as a group)
 
 ### Project Description
 
