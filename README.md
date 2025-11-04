@@ -13,7 +13,7 @@ Handcrafted Haven is a WDD430 individual project submission that serves as a vir
 
 ## Team Information
 
-**Project Lead & Developer:** Kendy Chae  
+**Project Lead & Developer:** Kendahl Bingham  
 **Course:** WDD430 - Advanced Web Development  
 **Institution:** Brigham Young University - Idaho  
 **Semester:** Fall 2024
@@ -168,7 +168,7 @@ This project is created for educational purposes as part of the WDD430 coursewor
 
 ## Contact
 
-**Kendy Chae**
+**Kendahl Bingham**
 
 - GitHub: [@kendychae](https://github.com/kendychae)
 - Email: [Your Email]

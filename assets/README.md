@@ -3,10 +3,12 @@
 ## Required Screenshots
 
 ### 1. Local Project Screenshot
+
 **Filename:** `local-project-screenshot.png`
 **Description:** Screenshot showing the local development environment with the project cloned and running on localhost:3000
 
 **To capture this screenshot:**
+
 1. Open VS Code with the handcrafted-haven project
 2. Run `npm run dev` in the terminal
 3. Open browser to `http://localhost:3000`
@@ -14,10 +16,12 @@
 5. Save as `local-project-screenshot.png` in the assets folder
 
 ### 2. Design Theme - Color Palette
+
 **Filename:** `color-palette.png`
 **Description:** Visual representation of the project's color scheme and design system
 
 **To capture this screenshot:**
+
 1. Open the live site: https://handcrafted-haven-lemon-iota.vercel.app/
 2. Take screenshot of the homepage showing the color scheme in action
 3. Alternatively, take a screenshot of the Tailwind config file showing the custom colors
@@ -35,11 +39,13 @@
 If you prefer not to include actual image files, you can update the W2-SUBMISSION.md file to describe the screenshots instead of embedding them:
 
 Replace:
+
 ```markdown
 ![Local Development Environment](../assets/local-project-screenshot.png)
 ```
 
 With:
+
 ```markdown
 **Local Development Environment Screenshot Description:**
 Screenshot shows VS Code editor with the handcrafted-haven project structure visible, terminal running `npm run dev`, and browser displaying the homepage at localhost:3000 with full functionality.

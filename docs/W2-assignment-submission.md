@@ -2,7 +2,7 @@
 
 ## Student Information
 
-**Name:** Kendy Chae  
+**Name:** Kendahl Bingham  
 **Course:** WDD430 - Advanced Web Development  
 **Institution:** Brigham Young University - Idaho  
 **Semester:** Fall 2025
@@ -261,7 +261,7 @@ This individual submission fulfills all WDD430 group project requirements while 
 
 ---
 
-**Submitted by:** Kendy Chae  
+**Submitted by:** Kendahl Bingham  
 **Date:** November 4, 2024  
 **Course:** WDD430 - Advanced Web Development  
 **Institution:** Brigham Young University - Idaho
