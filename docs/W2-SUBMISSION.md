@@ -1,6 +1,6 @@
 # WDD430 Week 2 Group Project Submission
 
-**Student:** Kendahl Bingham
+**Students:** Kendahl Bingham, Dominic Odeh Abah, Nsisong Gabriel Johnson, Manuel Mario Zamalloa Llantoy
 **Course:** WDD430 - Advanced Web Development  
 **Institution:** Brigham Young University - Idaho  
 **Date:** November 4, 2025
@@ -12,6 +12,9 @@
 ### Participants
 
 - **Kendahl Bingham** - Project Lead & Full-Stack Developer
+- **Dominic Odeh Abah** - Team Member
+- **Nsisong Gabriel Johnson** - Team Member
+- **Manuel Mario Zamalloa Llantoy** - Team Member
 
 ### Meeting Content Summary
 
@@ -292,4 +295,4 @@ This individual project submission demonstrates a complete, production-ready art
 
 ---
 
-_Submitted by Kendahl Bingham for WDD430 Week 2 Group Project Assignment_
+_Submitted by Kendahl Bingham, Dominic Odeh Abah, Nsisong Gabriel Johnson, and Manuel Mario Zamalloa Llantoy for WDD430 Week 2 Group Project Assignment_
