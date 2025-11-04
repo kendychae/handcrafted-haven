@@ -80,11 +80,12 @@ const getArtisanProducts = (artisanId: number) => [
 ];
 
 type Props = {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const artisan = artisansData.find(a => a.id === parseInt(params.id));
+  const { id } = await params;
+  const artisan = artisansData.find(a => a.id === parseInt(id));
   
   if (!artisan) {
     return {
@@ -98,8 +99,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default function ArtisanProfilePage({ params }: Props) {
-  const artisan = artisansData.find(a => a.id === parseInt(params.id));
+export default async function ArtisanProfilePage({ params }: Props) {
+  const { id } = await params;
+  const artisan = artisansData.find(a => a.id === parseInt(id));
 
   if (!artisan) {
     notFound();
