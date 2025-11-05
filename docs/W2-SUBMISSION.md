@@ -2,8 +2,8 @@
 
 **Students:** Kendahl Bingham, Dominic Odeh Abah, Nsisong Gabriel Johnson, Manuel Mario Zamalloa Llantoy
 **Course:** WDD430 - Advanced Web Development  
-**Institution:** Brigham Young University - Idaho  
-**Date:** November 4, 2025
+**Institution:** Brigham Young University - Idaho PATHWAY
+**Date:** November 5, 2025
 
 ---
 
@@ -11,7 +11,7 @@
 
 ### Participants
 
-- **Kendahl Bingham** - Project Lead & Full-Stack Developer
+- **Kendahl Bingham** - Project Lead
 - **Dominic Odeh Abah** - Team Member
 - **Nsisong Gabriel Johnson** - Team Member
 - **Manuel Mario Zamalloa Llantoy** - Team Member
@@ -281,7 +281,7 @@ The design theme is visually evident throughout the live application at [handcra
 
 ## Submission Summary
 
-This individual project submission demonstrates a complete, production-ready artisan marketplace application built with modern web technologies. The Handcrafted Haven platform showcases professional development practices, comprehensive planning through user stories, and a cohesive design system that effectively serves both artisans and customers.
+This group project submission demonstrates a complete, production-ready artisan marketplace application built with modern web technologies. The Handcrafted Haven platform showcases professional development practices, comprehensive planning through user stories, and a cohesive design system that effectively serves both artisans and customers.
 
 **Key Achievements:**
 
@@ -290,8 +290,6 @@ This individual project submission demonstrates a complete, production-ready art
 - Live deployment with continuous integration
 - Responsive, accessible design following modern UX principles
 - Complete project documentation and submission materials
-
-**Live Application:** [https://handcrafted-haven-lemon-iota.vercel.app/](https://handcrafted-haven-lemon-iota.vercel.app/)
 
 ---
 
