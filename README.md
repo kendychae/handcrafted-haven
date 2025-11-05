@@ -13,10 +13,14 @@ Handcrafted Haven is a WDD430 group project submission that serves as a virtual 
 
 ## Team Information
 
-**Project Lead & Developer:** Kendahl Bingham  
+**Project Lead & Developer:** Kendahl Bingham
+- **Dominic Odeh Abah** - Team Member
+- **Nsisong Gabriel Johnson** - Team Member
+- **Manuel Mario Zamalloa Llantoy** - Team Member
+
 **Course:** WDD430 - Advanced Web Development  
-**Institution:** Brigham Young University - Idaho  
-**Semester:** Fall 2024
+**Institution:** Brigham Young University - Pathway  
+**Semester:** Winter 2025
 
 ## Features
 
