@@ -11,7 +11,7 @@
 
 ### Participants
 
-- **Kendahl Bingham** - Project Lead
+- **Kendahl Bingham** - W2 Lead
 - **Dominic Odeh Abah** - Team Member
 - **Nsisong Gabriel Johnson** - Team Member
 - **Manuel Mario Zamalloa Llantoy** - Team Member
