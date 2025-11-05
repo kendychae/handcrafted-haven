@@ -114,6 +114,7 @@ const Header = () => {
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="p-2 rounded-md text-neutral-700 hover:text-primary-600 focus:outline-none focus:ring-2 focus:ring-primary-500"
+              aria-label="Add to wishlist"
             >
               <svg
                 className="h-6 w-6"

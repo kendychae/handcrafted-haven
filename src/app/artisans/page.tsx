@@ -146,7 +146,7 @@ const ArtisansPage = () => {
             ))}
           </div>
           <div className="flex gap-2">
-            <select className="select">
+            <select className="select" aria-label="Sort artisans">
               <option>Sort by Rating</option>
               <option>Sort by Experience</option>
               <option>Sort by Products</option>
