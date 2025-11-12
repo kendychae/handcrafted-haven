@@ -16,18 +16,18 @@ The group's GitHub Project Board contains more than 10 items including team coll
 
 ### Participants
 
-- Kendahl Bingham (Team Lead)
+- Kendahl Bingham
 - Dominic Odeh Abah
 - Nsisong Gabriel Johnson
 - Manuel Mario Zamalloa Llantoy
 
 ### Challenge
 
-Setting up proper GitHub collaboration workflow with branch protection rules while ensuring team members can contribute effectively. We had to balance security with accessibility, configuring branch protection to require pull requests while allowing the team lead to merge critical updates.
+Setting up proper GitHub collaboration workflow with branch protection rules while ensuring team members can contribute effectively. We also ALL live in different time zones and have issues with internet accesibility. We had to balance security with accessibility, configuring branch protection to require pull requests while allowing the team to merge critical updates.
 
 ### Success
 
-Successfully created a complete, functional marketplace application that exceeds the W3 requirements. Our Handcrafted Haven platform includes comprehensive Next.js application with TypeScript, responsive design with custom Tailwind CSS theming, complete product catalog with filtering functionality, dynamic artisan profile pages, and professional deployment on Vercel.
+Successfully created a complete, functional marketplace application that exceeds the W3 requirements. Our Handcrafted Haven platform includes comprehensive Next.js application with TypeScript, responsive design with custom Tailwind CSS theming, complete product catalog with filtering functionality, dynamic artisan profile pages, and professional deployment on Vercel. Despite our internet issues and time zone differences, we have found a way to collaborate that works for all.
 
 ### Insight
 
