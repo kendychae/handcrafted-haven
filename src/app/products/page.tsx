@@ -53,7 +53,7 @@ const ProductsPage = () => {
       price: 78.00,
       rating: 5,
       category: 'Glass',
-      image: 'https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=400&h=300&fit=crop&crop=center',
+      image: 'https://images.unsplash.com/photo-1563241527-3004b7be0ffd?w=400&h=300&fit=crop&crop=center',
       description: 'Stunning hand-blown glass vase with unique swirl patterns and vibrant colors.',
     },
     {
@@ -63,7 +63,7 @@ const ProductsPage = () => {
       price: 42.00,
       rating: 4,
       category: 'Leather',
-      image: 'https://images.unsplash.com/photo-1531346878377-a5be20888e57?w=400&h=300&fit=crop&crop=center',
+      image: 'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400&h=300&fit=crop&crop=center',
       description: 'Premium leather journal cover with hand-tooled designs and brass accents.',
     },
     {
@@ -73,7 +73,7 @@ const ProductsPage = () => {
       price: 68.00,
       rating: 5,
       category: 'Textiles',
-      image: 'https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=400&h=300&fit=crop&crop=center',
+      image: 'https://images.unsplash.com/photo-1601924994987-69e26d50dc26?w=400&h=300&fit=crop&crop=center',
       description: 'Set of three handwoven baskets made from sustainable materials.',
     },
     {
