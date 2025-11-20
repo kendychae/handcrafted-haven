@@ -63,7 +63,7 @@ const ProductsPage = () => {
       price: 42.00,
       rating: 4,
       category: 'Leather',
-      image: 'https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=400&h=300&fit=crop&crop=center',
+      image: 'https://images.unsplash.com/photo-1609372332255-611485350f25?w=400&h=300&fit=crop&crop=center',
       description: 'Premium leather journal cover with hand-tooled designs and brass accents.',
     },
     {
@@ -73,7 +73,7 @@ const ProductsPage = () => {
       price: 68.00,
       rating: 5,
       category: 'Textiles',
-      image: 'https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=400&h=300&fit=crop&crop=center',
+      image: 'https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?w=400&h=300&fit=crop&crop=center',
       description: 'Beautiful handwoven fabric from Guatemala created on traditional backstrap looms with vibrant patterns.',
     },
     {
