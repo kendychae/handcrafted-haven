@@ -8,6 +8,11 @@ import { CartProvider } from '@/contexts/CartContext'
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 const playfair = Playfair_Display({ subsets: ['latin'], variable: '--font-playfair' })
 
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+}
+
 export const metadata: Metadata = {
   title: 'Handcrafted Haven - Artisan Marketplace',
   description: 'Discover unique handcrafted items from talented artisans and crafters. A virtual marketplace connecting creators with customers who appreciate handmade products.',
@@ -15,7 +20,6 @@ export const metadata: Metadata = {
   authors: [{ name: 'Kendy Chae' }],
   creator: 'Kendy Chae',
   publisher: 'Handcrafted Haven',
-  viewport: 'width=device-width, initial-scale=1',
   openGraph: {
     title: 'Handcrafted Haven - Artisan Marketplace',
     description: 'Discover unique handcrafted items from talented artisans and crafters.',

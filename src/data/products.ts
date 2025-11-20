@@ -11,8 +11,6 @@ export const productsData = [
     category: 'Pottery',
     images: [
       'https://images.unsplash.com/photo-1610701596007-11502861dcfa?w=600&h=600&fit=crop&crop=center',
-      'https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=600&h=600&fit=crop&crop=center',
-      'https://images.unsplash.com/photo-1609081219090-a6d81d3085bf?w=600&h=600&fit=crop&crop=center',
     ],
     description: 'Beautiful handcrafted ceramic bowl with natural earth tones and unique glaze patterns. Each piece is individually crafted and fired, making every bowl truly one-of-a-kind. Perfect for serving salads, fruits, or as a decorative centerpiece.',
     materials: ['Stoneware clay', 'Natural glaze', 'Lead-free finish'],
@@ -98,8 +96,8 @@ export const productsData = [
     reviewCount: 9,
     category: 'Glass',
     images: [
-      'https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=600&h=600&fit=crop&crop=center',
       'https://images.unsplash.com/photo-1563241527-3004b7be0ffd?w=600&h=600&fit=crop&crop=center',
+      'https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=600&h=600&fit=crop&crop=center',
     ],
     description: 'Stunning hand-blown glass vase with unique swirl patterns and vibrant colors.',
     materials: ['Borosilicate glass', 'Natural pigments'],
@@ -120,6 +118,7 @@ export const productsData = [
     reviewCount: 21,
     category: 'Leather',
     images: [
+      'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=600&h=600&fit=crop&crop=center',
       'https://images.unsplash.com/photo-1531346878377-a5be20888e57?w=600&h=600&fit=crop&crop=center',
     ],
     description: 'Premium leather journal cover with hand-tooled designs and brass accents.',
@@ -141,8 +140,8 @@ export const productsData = [
     reviewCount: 16,
     category: 'Textiles',
     images: [
-      'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=600&fit=crop&crop=center',
-      'https://images.unsplash.com/photo-1595246140520-04a14bee3133?w=600&h=600&fit=crop&crop=center',
+      'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=600&fit=crop&crop=center',
+      'https://images.unsplash.com/photo-1571049489773-87d927acb327?w=600&h=600&fit=crop&crop=center',
     ],
     description: 'Set of three handwoven baskets made from sustainable materials.',
     materials: ['Natural reed', 'Organic cotton trim'],
