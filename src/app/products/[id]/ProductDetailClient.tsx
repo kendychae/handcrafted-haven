@@ -9,7 +9,7 @@ interface ProductDetailClientProps {
   productId: string;
 }
 
-export default function ProductDetailClient({ productId }: ProductDetailClientProps) {
+function ProductDetailClient({ productId }: ProductDetailClientProps) {
   const product = productsData.find(p => p.id === parseInt(productId));
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const [quantity, setQuantity] = useState(1);
@@ -136,7 +136,7 @@ export default function ProductDetailClient({ productId }: ProductDetailClientPr
             {/* Story */}
             {product.story && (
               <div className="bg-primary-50 rounded-lg p-6">
-                <h3 className="font-semibold text-neutral-900 mb-2">Artisan's Story</h3>
+                <h3 className="font-semibold text-neutral-900 mb-2">Artisan&apos;s Story</h3>
                 <p className="text-neutral-700">{product.story}</p>
               </div>
             )}
