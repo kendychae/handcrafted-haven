@@ -118,6 +118,7 @@ export const productsData = [
     reviewCount: 21,
     category: 'Leather',
     images: [
+      'https://images.unsplash.com/photo-1512820790803-83ca734da794?w=600&h=600&fit=crop&crop=center',
       'https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=600&h=600&fit=crop&crop=center',
       'https://images.unsplash.com/photo-1531346878377-a5be20888e57?w=600&h=600&fit=crop&crop=center',
     ],
@@ -140,8 +141,8 @@ export const productsData = [
     reviewCount: 16,
     category: 'Textiles',
     images: [
-      'https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?w=600&h=600&fit=crop&crop=center',
-      'https://images.unsplash.com/photo-1585128792103-f8f6b4a4e9c0?w=600&h=600&fit=crop&crop=center',
+      'https://images.unsplash.com/photo-1523293182086-7651a899d37f?w=600&h=600&fit=crop&crop=center',
+      'https://images.unsplash.com/photo-1566206091558-7f218b696731?w=600&h=600&fit=crop&crop=center',
     ],
     description: 'Set of three handwoven baskets made from sustainable materials.',
     materials: ['Natural reed', 'Organic cotton trim'],
