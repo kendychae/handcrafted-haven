@@ -141,8 +141,8 @@ export const productsData = [
     reviewCount: 16,
     category: 'Textiles',
     images: [
-      'https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=600&h=600&fit=crop&crop=center',
-      'https://images.unsplash.com/photo-1609081219090-a6d81d3085bf?w=600&h=600&fit=crop&crop=center',
+      'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=600&fit=crop&crop=center',
+      'https://images.unsplash.com/photo-1595246140520-04a14bee3133?w=600&h=600&fit=crop&crop=center',
     ],
     description: 'Set of three handwoven baskets made from sustainable materials.',
     materials: ['Natural reed', 'Organic cotton trim'],
