@@ -1,14 +1,27 @@
+'use client';
+
 import Link from 'next/link';
+import { useState } from 'react';
 
 export default function Home() {
+  const [wishlist, setWishlist] = useState<number[]>([]);
+
+  const toggleWishlist = (productId: number) => {
+    setWishlist(prev => 
+      prev.includes(productId) 
+        ? prev.filter(id => id !== productId)
+        : [...prev, productId]
+    );
+  };
   const featuredProducts = [
     {
       id: 1,
-      name: 'Handwoven Ceramic Bowl',
+      name: 'Ceramic Bowl',
       artist: 'Sarah Martinez',
       price: 45.00,
       rating: 5,
       category: 'Pottery',
+      image: 'https://images.unsplash.com/photo-1610701596007-11502861dcfa?w=400&h=300&fit=crop&crop=center',
     },
     {
       id: 2,
@@ -17,6 +30,7 @@ export default function Home() {
       price: 89.99,
       rating: 5,
       category: 'Jewelry',
+      image: 'https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=400&h=300&fit=crop&crop=center',
     },
     {
       id: 3,
@@ -25,6 +39,7 @@ export default function Home() {
       price: 32.50,
       rating: 4,
       category: 'Textiles',
+      image: 'https://images.unsplash.com/photo-1520903920243-00d872a2d1c9?w=400&h=300&fit=crop&crop=center',
     },
     {
       id: 4,
@@ -33,6 +48,7 @@ export default function Home() {
       price: 56.00,
       rating: 5,
       category: 'Woodwork',
+      image: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=300&fit=crop&crop=center',
     },
   ];
 
@@ -215,19 +231,38 @@ export default function Home() {
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {featuredProducts.map((product) => (
-              <div key={product.id} className="product-card">
+              <Link key={product.id} href={`/products/${product.id}`} className="product-card group">
                 <div className="relative">
-                  <div className="w-full h-64 bg-gradient-to-br from-neutral-100 to-neutral-200 rounded-t-xl flex items-center justify-center">
-                    <div className="text-center">
-                      <div className="text-6xl mb-2">🎨</div>
-                      <span className="body-small text-neutral-500">Product Image</span>
-                    </div>
+                  <div className="w-full h-64 bg-neutral-100 rounded-t-xl overflow-hidden">
+                    <img
+                      src={product.image}
+                      alt={product.name}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      loading="lazy"
+                    />
                   </div>
-                  <div className="absolute top-4 right-4 bg-white rounded-full p-2 shadow-md">
-                    <svg className="w-5 h-5 text-neutral-400 hover:text-primary-600 cursor-pointer" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <button 
+                    onClick={(e) => {
+                      e.preventDefault();
+                      toggleWishlist(product.id);
+                    }}
+                    className={`absolute top-4 right-4 bg-white rounded-full p-2 shadow-md hover:shadow-lg transition-all duration-300 ${
+                      wishlist.includes(product.id) ? 'scale-110' : ''
+                    }`}
+                  >
+                    <svg 
+                      className={`w-5 h-5 transition-colors duration-300 ${
+                        wishlist.includes(product.id) 
+                          ? 'text-red-500 fill-current' 
+                          : 'text-neutral-400 hover:text-red-500'
+                      }`} 
+                      fill={wishlist.includes(product.id) ? 'currentColor' : 'none'} 
+                      stroke="currentColor" 
+                      viewBox="0 0 24 24"
+                    >
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                     </svg>
-                  </div>
+                  </button>
                 </div>
                 
                 <div className="p-6">
@@ -236,7 +271,7 @@ export default function Home() {
                       {product.category}
                     </span>
                   </div>
-                  <h3 className="heading-4 mb-2">{product.name}</h3>
+                  <h3 className="heading-4 mb-2 group-hover:text-primary-600 transition-colors">{product.name}</h3>
                   <p className="body-small text-neutral-600 mb-3">by {product.artist}</p>
                   
                   {/* Rating */}
@@ -262,7 +297,7 @@ export default function Home() {
                     </button>
                   </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
 

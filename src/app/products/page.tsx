@@ -7,13 +7,14 @@ const ProductsPage = () => {
   const products = [
     {
       id: 1,
-      name: 'Handwoven Ceramic Bowl',
+      name: 'Ceramic Bowl',
       artist: 'Sarah Martinez',
       price: 45.00,
       rating: 5,
       category: 'Pottery',
-      image: '/api/placeholder/400/300',
+      image: 'https://images.unsplash.com/photo-1610701596007-11502861dcfa?w=400&h=300&fit=crop&crop=center',
       featured: true,
+      description: 'Beautiful handcrafted ceramic bowl with natural earth tones and unique glaze patterns.',
     },
     {
       id: 2,
@@ -22,7 +23,8 @@ const ProductsPage = () => {
       price: 89.99,
       rating: 5,
       category: 'Jewelry',
-      image: '/api/placeholder/400/300',
+      image: 'https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=400&h=300&fit=crop&crop=center',
+      description: 'Elegant sterling silver pendant with intricate hand-engraved details.',
     },
     {
       id: 3,
@@ -31,7 +33,8 @@ const ProductsPage = () => {
       price: 32.50,
       rating: 4,
       category: 'Textiles',
-      image: '/api/placeholder/400/300',
+      image: 'https://images.unsplash.com/photo-1520903920243-00d872a2d1c9?w=400&h=300&fit=crop&crop=center',
+      description: 'Soft organic cotton scarf with hand-woven patterns in natural dyes.',
     },
     {
       id: 4,
@@ -40,7 +43,8 @@ const ProductsPage = () => {
       price: 56.00,
       rating: 5,
       category: 'Woodwork',
-      image: '/api/placeholder/400/300',
+      image: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=300&fit=crop&crop=center',
+      description: 'Rustic picture frame crafted from reclaimed barn wood with natural finish.',
     },
     {
       id: 5,
@@ -49,7 +53,8 @@ const ProductsPage = () => {
       price: 78.00,
       rating: 5,
       category: 'Glass',
-      image: '/api/placeholder/400/300',
+      image: 'https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=400&h=300&fit=crop&crop=center',
+      description: 'Stunning hand-blown glass vase with unique swirl patterns and vibrant colors.',
     },
     {
       id: 6,
@@ -58,7 +63,28 @@ const ProductsPage = () => {
       price: 42.00,
       rating: 4,
       category: 'Leather',
-      image: '/api/placeholder/400/300',
+      image: 'https://images.unsplash.com/photo-1531346878377-a5be20888e57?w=400&h=300&fit=crop&crop=center',
+      description: 'Premium leather journal cover with hand-tooled designs and brass accents.',
+    },
+    {
+      id: 7,
+      name: 'Woven Basket Set',
+      artist: 'Maria Santos',
+      price: 68.00,
+      rating: 5,
+      category: 'Textiles',
+      image: '/images/woven-baskets.png',
+      description: 'Set of three handwoven baskets made from sustainable materials.',
+    },
+    {
+      id: 8,
+      name: 'Ceramic Mug Collection',
+      artist: 'Sarah Martinez',
+      price: 56.00,
+      rating: 5,
+      category: 'Pottery',
+      image: 'https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=400&h=300&fit=crop&crop=center',
+      description: 'Set of four unique ceramic mugs with hand-painted glazes.',
     },
   ];
 
@@ -69,6 +95,18 @@ const ProductsPage = () => {
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [searchTerm, setSearchTerm] = useState('');
   const [sortBy, setSortBy] = useState('Featured');
+  const [displayCount, setDisplayCount] = useState(8);
+  const [wishlist, setWishlist] = useState<number[]>([]);
+  
+  const ITEMS_PER_LOAD = 4;
+
+  const toggleWishlist = (productId: number) => {
+    setWishlist(prev => 
+      prev.includes(productId) 
+        ? prev.filter(id => id !== productId)
+        : [...prev, productId]
+    );
+  };
 
   // Filter and sort products
   const filteredProducts = useMemo(() => {
@@ -98,6 +136,14 @@ const ProductsPage = () => {
 
     return filtered;
   }, [products, selectedCategory, searchTerm, sortBy]);
+
+  // Get products to display based on current display count
+  const displayedProducts = filteredProducts.slice(0, displayCount);
+  const hasMoreProducts = displayCount < filteredProducts.length;
+
+  const handleLoadMore = () => {
+    setDisplayCount(prev => prev + ITEMS_PER_LOAD);
+  };
 
   return (
     <div className="container section-padding">
@@ -168,7 +214,7 @@ const ProductsPage = () => {
       {/* Results Count */}
       <div className="mb-6">
         <p className="text-neutral-600">
-          Showing {filteredProducts.length} of {products.length} products
+          Showing {displayedProducts.length} of {filteredProducts.length} products
           {selectedCategory !== 'All' && ` in ${selectedCategory}`}
           {searchTerm && ` matching "${searchTerm}"`}
         </p>
@@ -176,19 +222,21 @@ const ProductsPage = () => {
 
       {/* Products Grid */}
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-12">
-        {filteredProducts.length > 0 ? (
-          filteredProducts.map((product) => (
+        {displayedProducts.length > 0 ? (
+          displayedProducts.map((product) => (
           <Link
             key={product.id}
             href={`/products/${product.id}`}
             className="product-card group"
           >
             <div className="relative">
-              <div className="w-full h-64 bg-gradient-to-br from-neutral-100 to-neutral-200 rounded-t-xl flex items-center justify-center">
-                <div className="text-center">
-                  <div className="text-6xl mb-2">🎨</div>
-                  <span className="body-small text-neutral-500">Product Image</span>
-                </div>
+              <div className="w-full h-64 bg-neutral-100 rounded-t-xl overflow-hidden">
+                <img
+                  src={product.image}
+                  alt={product.name}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                />
               </div>
               
               {/* Featured Badge */}
@@ -199,8 +247,25 @@ const ProductsPage = () => {
               )}
               
               {/* Wishlist Button */}
-              <button className="absolute top-4 right-4 bg-white rounded-full p-2 shadow-md hover:shadow-lg transition-shadow">
-                <svg className="w-5 h-5 text-neutral-400 hover:text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <button 
+                onClick={(e) => {
+                  e.preventDefault();
+                  toggleWishlist(product.id);
+                }}
+                className={`absolute top-4 right-4 bg-white rounded-full p-2 shadow-md hover:shadow-lg transition-all duration-300 ${
+                  wishlist.includes(product.id) ? 'scale-110' : ''
+                }`}
+              >
+                <svg 
+                  className={`w-5 h-5 transition-colors duration-300 ${
+                    wishlist.includes(product.id) 
+                      ? 'text-red-500 fill-current' 
+                      : 'text-neutral-400 hover:text-red-500'
+                  }`} 
+                  fill={wishlist.includes(product.id) ? 'currentColor' : 'none'} 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                >
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                 </svg>
               </button>
@@ -259,6 +324,7 @@ const ProductsPage = () => {
               onClick={() => {
                 setSelectedCategory('All');
                 setSearchTerm('');
+                setDisplayCount(8);
               }}
               className="bg-primary-600 text-white px-6 py-3 rounded-lg hover:bg-primary-700 transition-colors"
             >
@@ -269,14 +335,19 @@ const ProductsPage = () => {
       </div>
 
       {/* Load More */}
-      <div className="text-center">
-        <button className="btn-outline px-8 py-3">
-          Load More Products
-        </button>
-        <p className="body-small text-neutral-600 mt-4">
-          Showing 6 of 124 products
-        </p>
-      </div>
+      {hasMoreProducts && (
+        <div className="text-center">
+          <button 
+            onClick={handleLoadMore}
+            className="btn-outline px-8 py-3"
+          >
+            Load More Products
+          </button>
+          <p className="body-small text-neutral-600 mt-4">
+            Showing {displayedProducts.length} of {filteredProducts.length} products
+          </p>
+        </div>
+      )}
     </div>
   );
 };

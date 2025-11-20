@@ -1,4 +1,7 @@
+'use client';
+
 import Link from 'next/link';
+import { useState, useMemo } from 'react';
 
 const ArtisansPage = () => {
   const artisans = [
@@ -72,7 +75,41 @@ const ArtisansPage = () => {
     },
   ];
 
-  const specialties = ['All', 'Ceramic', 'Jewelry', 'Textiles', 'Woodwork', 'Glass', 'Leather'];
+  const specialties = ['All', 'Ceramic Artist', 'Jewelry Designer', 'Textile Artist', 'Woodworker', 'Glass Artist', 'Leather Craftsman'];
+  const sortOptions = ['Featured', 'Rating', 'Experience', 'Products', 'Location'];
+
+  // State for filtering and sorting
+  const [selectedSpecialty, setSelectedSpecialty] = useState('All');
+  const [sortBy, setSortBy] = useState('Featured');
+
+  // Filter and sort artisans
+  const filteredArtisans = useMemo(() => {
+    let filtered = artisans.filter(artisan => {
+      return selectedSpecialty === 'All' || artisan.specialty === selectedSpecialty;
+    });
+
+    // Sort artisans
+    switch (sortBy) {
+      case 'Rating':
+        filtered.sort((a, b) => b.rating - a.rating);
+        break;
+      case 'Experience':
+        filtered.sort((a, b) => b.yearsExperience - a.yearsExperience);
+        break;
+      case 'Products':
+        filtered.sort((a, b) => b.productsCount - a.productsCount);
+        break;
+      case 'Location':
+        filtered.sort((a, b) => a.location.localeCompare(b.location));
+        break;
+      case 'Featured':
+      default:
+        filtered.sort((a, b) => (b.featured ? 1 : 0) - (a.featured ? 1 : 0));
+        break;
+    }
+
+    return filtered;
+  }, [artisans, selectedSpecialty, sortBy]);
 
   return (
     <div className="container section-padding">
@@ -129,36 +166,54 @@ const ArtisansPage = () => {
 
       {/* Filters */}
       <div className="bg-white rounded-xl shadow-soft border border-neutral-200 p-6 mb-8">
-        <div className="flex flex-col sm:flex-row gap-4 items-center justify-between">
-          <div className="flex flex-wrap gap-2">
-            <span className="font-medium text-neutral-700">Filter by specialty:</span>
-            {specialties.map((specialty) => (
-              <button
-                key={specialty}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
-                  specialty === 'All'
-                    ? 'bg-primary-600 text-white'
-                    : 'bg-neutral-100 text-neutral-700 hover:bg-neutral-200'
-                }`}
-              >
-                {specialty}
-              </button>
-            ))}
+        <div className="flex flex-col lg:flex-row gap-6 items-center">
+          <div className="flex-1">
+            <span className="font-medium text-neutral-800 mb-3 block">Filter by specialty:</span>
+            <div className="flex flex-wrap gap-2">
+              {specialties.map((specialty) => (
+                <button
+                  key={specialty}
+                  onClick={() => setSelectedSpecialty(specialty)}
+                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+                    specialty === selectedSpecialty
+                      ? 'bg-primary-700 text-white'
+                      : 'bg-neutral-100 text-neutral-800 hover:bg-neutral-200'
+                  }`}
+                >
+                  {specialty === 'All' ? 'All Artisans' : specialty}
+                </button>
+              ))}
+            </div>
           </div>
-          <div className="flex gap-2">
-            <select className="select">
-              <option>Sort by Rating</option>
-              <option>Sort by Experience</option>
-              <option>Sort by Products</option>
-              <option>Sort by Location</option>
+          <div className="w-full lg:w-auto">
+            <label className="font-medium text-neutral-800 mb-2 block">Sort by:</label>
+            <select 
+              className="select min-w-[180px]"
+              value={sortBy}
+              onChange={(e) => setSortBy(e.target.value)}
+            >
+              {sortOptions.map((option) => (
+                <option key={option} value={option}>
+                  {option}
+                </option>
+              ))}
             </select>
           </div>
+        </div>
+        
+        {/* Results Count */}
+        <div className="mt-4 pt-4 border-t border-neutral-200">
+          <p className="text-neutral-700">
+            Showing {filteredArtisans.length} of {artisans.length} artisans
+            {selectedSpecialty !== 'All' && ` specializing in ${selectedSpecialty}`}
+          </p>
         </div>
       </div>
 
       {/* Artisans Grid */}
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-        {artisans.map((artisan) => (
+        {filteredArtisans.length > 0 ? (
+          filteredArtisans.map((artisan) => (
           <Link
             key={artisan.id}
             href={`/artisans/${artisan.id}`}
@@ -232,7 +287,24 @@ const ArtisansPage = () => {
               View Profile & Products
             </button>
           </Link>
-        ))}
+          ))
+        ) : (
+          <div className="col-span-full text-center py-12">
+            <div className="w-24 h-24 bg-neutral-100 rounded-full flex items-center justify-center mx-auto mb-6">
+              <span className="text-4xl">👨‍🎨</span>
+            </div>
+            <h3 className="text-xl font-semibold text-neutral-900 mb-2">No artisans found</h3>
+            <p className="text-neutral-700 mb-6">
+              No artisans match your current filter: {selectedSpecialty}
+            </p>
+            <button 
+              onClick={() => setSelectedSpecialty('All')}
+              className="bg-primary-700 text-white px-6 py-3 rounded-lg hover:bg-primary-800 transition-colors"
+            >
+              View All Artisans
+            </button>
+          </div>
+        )}
       </div>
 
       {/* Call to Action */}
