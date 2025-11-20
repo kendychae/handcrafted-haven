@@ -118,7 +118,7 @@ export const productsData = [
     reviewCount: 21,
     category: 'Leather',
     images: [
-      'https://images.unsplash.com/photo-1609372332255-611485350f25?w=600&h=600&fit=crop&crop=center',
+      'https://images.unsplash.com/photo-1517842645767-c639042777db?w=600&h=600&fit=crop&crop=center',
       'https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=600&h=600&fit=crop&crop=center',
       'https://images.unsplash.com/photo-1531346878377-a5be20888e57?w=600&h=600&fit=crop&crop=center',
     ],
@@ -141,8 +141,8 @@ export const productsData = [
     reviewCount: 16,
     category: 'Textiles',
     images: [
-      'https://images.unsplash.com/photo-1582639590011-f5a8416d1101?w=600&h=600&fit=crop&crop=center',
-      'https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?w=600&h=600&fit=crop&crop=center',
+      'https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=600&h=600&fit=crop&crop=center',
+      'https://images.unsplash.com/photo-1558769132-cb1aea1f4c59?w=600&h=600&fit=crop&crop=center',
     ],
     description: 'Beautiful handwoven Guatemalan textile fabric created on traditional looms using ancestral techniques.',
     materials: ['Natural cotton', 'Traditional dyes'],
