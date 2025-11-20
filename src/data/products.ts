@@ -141,8 +141,8 @@ export const productsData = [
     reviewCount: 16,
     category: 'Textiles',
     images: [
-      'https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=600&h=600&fit=crop&crop=center',
-      'https://images.unsplash.com/photo-1558769132-cb1aea1f4c59?w=600&h=600&fit=crop&crop=center',
+      'https://images.unsplash.com/photo-1578932750294-f5075e85f44a?w=600&h=600&fit=crop&crop=center',
+      'https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?w=600&h=600&fit=crop&crop=center',
     ],
     description: 'Beautiful handwoven Guatemalan textile fabric created on traditional looms using ancestral techniques.',
     materials: ['Natural cotton', 'Traditional dyes'],

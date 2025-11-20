@@ -73,7 +73,7 @@ const ProductsPage = () => {
       price: 68.00,
       rating: 5,
       category: 'Textiles',
-      image: 'https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=400&h=300&fit=crop&crop=center',
+      image: 'https://images.unsplash.com/photo-1578932750294-f5075e85f44a?w=400&h=300&fit=crop&crop=center',
       description: 'Beautiful handwoven fabric from Guatemala created on traditional backstrap looms with vibrant patterns.',
     },
     {
