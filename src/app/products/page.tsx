@@ -73,7 +73,7 @@ const ProductsPage = () => {
       price: 68.00,
       rating: 5,
       category: 'Textiles',
-      image: '/images/woven-baskets.png',
+      image: 'https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=400&h=300&fit=crop&crop=center',
       description: 'Set of three handwoven baskets made from sustainable materials.',
     },
     {

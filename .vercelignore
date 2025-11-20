@@ -1,0 +1,3 @@
+# Vercel ignore file
+# Exclude large image file that might cause deployment issues
+public/images/woven-baskets.png
