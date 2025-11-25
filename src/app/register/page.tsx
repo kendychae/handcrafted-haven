@@ -82,24 +82,26 @@ export default function RegisterPage() {
               </label>
               <input
                 type="password"
+                name="password"
                 id="password"
                 className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
-                placeholder="Enter your password"
+                placeholder="Create a password"
                 required
               />
             </div>
             <div>
               <label
-                htmlFor="password"
+                htmlFor="confirmPassword"
                 className="block text-sm font-medium text-neutral-700 mb-2"
               >
                 Confirm Password
               </label>
               <input
                 type="password"
-                id="password"
+                name="confirmPassword"
+                id="confirmPassword"
                 className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
-                placeholder="Enter your password"
+                placeholder="Confirm your password"
                 required
               />
             </div>
@@ -111,6 +113,7 @@ export default function RegisterPage() {
                 Area of Interest
               </label>
               <select
+                name="interest"
                 id="interest"
                 className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
               >
