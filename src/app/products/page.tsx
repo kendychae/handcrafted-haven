@@ -97,12 +97,12 @@ const ProductsPage = () => {
   const [sortBy, setSortBy] = useState('Featured');
   const [displayCount, setDisplayCount] = useState(8);
   const [wishlist, setWishlist] = useState<number[]>([]);
-  
+
   const ITEMS_PER_LOAD = 4;
 
   const toggleWishlist = (productId: number) => {
-    setWishlist(prev => 
-      prev.includes(productId) 
+    setWishlist(prev =>
+      prev.includes(productId)
         ? prev.filter(id => id !== productId)
         : [...prev, productId]
     );
@@ -113,7 +113,7 @@ const ProductsPage = () => {
     let filtered = products.filter(product => {
       const matchesCategory = selectedCategory === 'All' || product.category === selectedCategory;
       const matchesSearch = product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                           product.artist.toLowerCase().includes(searchTerm.toLowerCase());
+        product.artist.toLowerCase().includes(searchTerm.toLowerCase());
       return matchesCategory && matchesSearch;
     });
 
@@ -151,7 +151,7 @@ const ProductsPage = () => {
       <div className="text-center mb-12">
         <h1 className="heading-1 mb-4">Handcrafted Products</h1>
         <p className="body-large max-w-2xl mx-auto">
-          Discover unique, handmade items created by talented artisans from around the world. 
+          Discover unique, handmade items created by talented artisans from around the world.
           Each piece tells a story and brings authentic craftsmanship to your life.
         </p>
       </div>
@@ -183,11 +183,10 @@ const ProductsPage = () => {
               <button
                 key={category}
                 onClick={() => setSelectedCategory(category)}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
-                  category === selectedCategory
+                className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${category === selectedCategory
                     ? 'bg-primary-600 text-white'
                     : 'bg-neutral-100 text-neutral-700 hover:bg-neutral-200'
-                }`}
+                  }`}
               >
                 {category}
               </button>
@@ -196,7 +195,7 @@ const ProductsPage = () => {
 
           {/* Sort Dropdown */}
           <div className="w-full lg:w-auto">
-            <select 
+            <select
               className="select min-w-[200px]"
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value)}
@@ -224,91 +223,89 @@ const ProductsPage = () => {
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-12">
         {displayedProducts.length > 0 ? (
           displayedProducts.map((product) => (
-          <Link
-            key={product.id}
-            href={`/products/${product.id}`}
-            className="product-card group"
-          >
-            <div className="relative">
-              <div className="w-full h-64 bg-neutral-100 rounded-t-xl overflow-hidden">
-                <img
-                  src={product.image}
-                  alt={product.name}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  loading="lazy"
-                />
-              </div>
-              
-              {/* Featured Badge */}
-              {product.featured && (
-                <div className="absolute top-4 left-4 bg-primary-600 text-white text-xs px-2 py-1 rounded-full">
-                  Featured
+            <Link
+              key={product.id}
+              href={`/products/${product.id}`}
+              className="product-card group"
+            >
+              <div className="relative">
+                <div className="w-full h-64 bg-neutral-100 rounded-t-xl overflow-hidden">
+                  <img
+                    src={product.image}
+                    alt={product.name}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    loading="lazy"
+                  />
                 </div>
-              )}
-              
-              {/* Wishlist Button */}
-              <button 
-                onClick={(e) => {
-                  e.preventDefault();
-                  toggleWishlist(product.id);
-                }}
-                className={`absolute top-4 right-4 bg-white rounded-full p-2 shadow-md hover:shadow-lg transition-all duration-300 ${
-                  wishlist.includes(product.id) ? 'scale-110' : ''
-                }`}
-              >
-                <svg 
-                  className={`w-5 h-5 transition-colors duration-300 ${
-                    wishlist.includes(product.id) 
-                      ? 'text-red-500 fill-current' 
-                      : 'text-neutral-400 hover:text-red-500'
-                  }`} 
-                  fill={wishlist.includes(product.id) ? 'currentColor' : 'none'} 
-                  stroke="currentColor" 
-                  viewBox="0 0 24 24"
+
+                {/* Featured Badge */}
+                {product.featured && (
+                  <div className="absolute top-4 left-4 bg-primary-600 text-white text-xs px-2 py-1 rounded-full">
+                    Featured
+                  </div>
+                )}
+
+                {/* Wishlist Button */}
+                <button
+                  onClick={(e) => {
+                    e.preventDefault();
+                    toggleWishlist(product.id);
+                  }}
+                  className={`absolute top-4 right-4 bg-white rounded-full p-2 shadow-md hover:shadow-lg transition-all duration-300 ${wishlist.includes(product.id) ? 'scale-110' : ''
+                    }`}
                 >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                </svg>
-              </button>
-            </div>
-            
-            <div className="p-6">
-              <div className="mb-2">
-                <span className="inline-block bg-primary-100 text-primary-700 text-xs px-2 py-1 rounded-full">
-                  {product.category}
-                </span>
-              </div>
-              
-              <h3 className="heading-4 mb-2 group-hover:text-primary-600 transition-colors">
-                {product.name}
-              </h3>
-              
-              <p className="body-small text-neutral-600 mb-3">by {product.artist}</p>
-              
-              {/* Rating */}
-              <div className="flex items-center mb-4">
-                <div className="flex text-yellow-400">
-                  {[...Array(5)].map((_, i) => (
-                    <svg
-                      key={i}
-                      className={`w-4 h-4 ${i < product.rating ? 'fill-current' : 'text-neutral-300'}`}
-                      viewBox="0 0 20 20"
-                    >
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
-                  ))}
-                </div>
-                <span className="body-small text-neutral-600 ml-2">({product.rating}.0)</span>
-              </div>
-              
-              <div className="flex justify-between items-center">
-                <span className="heading-4 text-primary-600">${product.price}</span>
-                <button className="btn-ghost text-sm px-4 py-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                  Quick View
+                  <svg
+                    className={`w-5 h-5 transition-colors duration-300 ${wishlist.includes(product.id)
+                        ? 'text-red-500 fill-current'
+                        : 'text-neutral-400 hover:text-red-500'
+                      }`}
+                    fill={wishlist.includes(product.id) ? 'currentColor' : 'none'}
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                  </svg>
                 </button>
               </div>
-            </div>
-          </Link>
-        ))
+
+              <div className="p-6">
+                <div className="mb-2">
+                  <span className="inline-block bg-primary-100 text-primary-700 text-xs px-2 py-1 rounded-full">
+                    {product.category}
+                  </span>
+                </div>
+
+                <h3 className="heading-4 mb-2 group-hover:text-primary-600 transition-colors">
+                  {product.name}
+                </h3>
+
+                <p className="body-small text-neutral-600 mb-3">by {product.artist}</p>
+
+                {/* Rating */}
+                <div className="flex items-center mb-4">
+                  <div className="flex text-yellow-400">
+                    {[...Array(5)].map((_, i) => (
+                      <svg
+                        key={i}
+                        className={`w-4 h-4 ${i < product.rating ? 'fill-current' : 'text-neutral-300'}`}
+                        viewBox="0 0 20 20"
+                      >
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                      </svg>
+                    ))}
+                  </div>
+                  <span className="body-small text-neutral-600 ml-2">({product.rating}.0)</span>
+                </div>
+
+                <div className="flex justify-between items-center">
+                  <span className="heading-4 text-primary-600">${product.price}</span>
+                  <button className="btn-ghost text-sm px-4 py-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                    Quick View
+                  </button>
+                </div>
+              </div>
+            </Link>
+          ))
         ) : (
           <div className="col-span-full text-center py-12">
             <div className="w-24 h-24 bg-neutral-100 rounded-full flex items-center justify-center mx-auto mb-6">
@@ -316,11 +313,11 @@ const ProductsPage = () => {
             </div>
             <h3 className="text-xl font-semibold text-neutral-900 mb-2">No products found</h3>
             <p className="text-neutral-600 mb-6">
-              {searchTerm 
+              {searchTerm
                 ? `No products match "${searchTerm}"`
                 : `No products in ${selectedCategory} category`}
             </p>
-            <button 
+            <button
               onClick={() => {
                 setSelectedCategory('All');
                 setSearchTerm('');
@@ -337,7 +334,7 @@ const ProductsPage = () => {
       {/* Load More */}
       {hasMoreProducts && (
         <div className="text-center">
-          <button 
+          <button
             onClick={handleLoadMore}
             className="btn-outline px-8 py-3"
           >
