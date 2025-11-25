@@ -1,21 +1,7 @@
 "use client";
 
-import type { Metadata } from "next";
 import Link from "next/link";
 import { useState, FormEvent } from "react";
-
-// Note: In a real app, this would be in a separate layout file
-// For now, we'll handle it client-side only
-const pageTitle = "Register - Handcrafted Haven";
-
-interface FormErrors {
-  firstName?: string;
-  lastName?: string;
-  email?: string;
-  password?: string;
-  confirmPassword?: string;
-  general?: string;
-}
 
 interface FormData {
   firstName: string;
@@ -24,6 +10,15 @@ interface FormData {
   password: string;
   confirmPassword: string;
   interest: string;
+}
+
+interface FormErrors {
+  firstName?: string;
+  lastName?: string;
+  email?: string;
+  password?: string;
+  confirmPassword?: string;
+  general?: string;
 }
 
 export default function RegisterPage() {
@@ -40,7 +35,27 @@ export default function RegisterPage() {
   const [isLoading, setIsLoading] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
 
-  // Form validation
+  const validateEmail = (email: string): boolean => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
+  const validatePassword = (password: string): string | null => {
+    if (password.length < 8) {
+      return "Password must be at least 8 characters long";
+    }
+    if (!/(?=.*[a-z])/.test(password)) {
+      return "Password must contain at least one lowercase letter";
+    }
+    if (!/(?=.*[A-Z])/.test(password)) {
+      return "Password must contain at least one uppercase letter";
+    }
+    if (!/(?=.*\d)/.test(password)) {
+      return "Password must contain at least one number";
+    }
+    return null;
+  };
+
   const validateForm = (): boolean => {
     const newErrors: FormErrors = {};
 
@@ -59,21 +74,20 @@ export default function RegisterPage() {
     }
 
     // Email validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!formData.email.trim()) {
-      newErrors.email = "Email address is required";
-    } else if (!emailRegex.test(formData.email)) {
+      newErrors.email = "Email is required";
+    } else if (!validateEmail(formData.email)) {
       newErrors.email = "Please enter a valid email address";
     }
 
     // Password validation
     if (!formData.password) {
       newErrors.password = "Password is required";
-    } else if (formData.password.length < 8) {
-      newErrors.password = "Password must be at least 8 characters";
-    } else if (!/(?=.*[a-z])(?=.*[A-Z])(?=.*\d)/.test(formData.password)) {
-      newErrors.password =
-        "Password must contain uppercase, lowercase, and number";
+    } else {
+      const passwordError = validatePassword(formData.password);
+      if (passwordError) {
+        newErrors.password = passwordError;
+      }
     }
 
     // Confirm password validation
@@ -87,14 +101,10 @@ export default function RegisterPage() {
     return Object.keys(newErrors).length === 0;
   };
 
-  // Handle form submission
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
-    // Clear previous errors
     setErrors({});
 
-    // Validate form
     if (!validateForm()) {
       return;
     }
@@ -102,11 +112,10 @@ export default function RegisterPage() {
     setIsLoading(true);
 
     try {
-      // TODO: Replace with actual API call
-      // Simulating API call with timeout
+      // Simulate API call - replace with actual API endpoint when backend is ready
       await new Promise((resolve) => setTimeout(resolve, 1500));
 
-      // In a real app, you would:
+      // TODO: Replace with actual API call
       // const response = await fetch('/api/auth/register', {
       //   method: 'POST',
       //   headers: { 'Content-Type': 'application/json' },
@@ -123,7 +132,6 @@ export default function RegisterPage() {
       //   throw new Error('Registration failed');
       // }
 
-      // Success - show success message
       setIsSuccess(true);
 
       // Reset form
@@ -136,10 +144,10 @@ export default function RegisterPage() {
         interest: "",
       });
 
-      // In a real app, redirect to login or dashboard after a delay
-      // setTimeout(() => {
-      //   window.location.href = '/login';
-      // }, 2000);
+      // Redirect to login after 2 seconds
+      setTimeout(() => {
+        window.location.href = "/login";
+      }, 2000);
     } catch (error) {
       setErrors({
         general:
@@ -150,25 +158,21 @@ export default function RegisterPage() {
     }
   };
 
-  // Handle input changes
-  const handleChange = (
+  const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-
+    setFormData((prev) => ({ ...prev, [name]: value }));
     // Clear error for this field when user starts typing
     if (errors[name as keyof FormErrors]) {
-      setErrors((prev) => ({
-        ...prev,
-        [name]: undefined,
-      }));
+      setErrors((prev) => ({ ...prev, [name]: undefined }));
     }
   };
 
+  const handleSocialLogin = (provider: string) => {
+    // TODO: Implement social login when backend is ready
+    alert(`${provider} login will be implemented when backend is ready`);
+  };
   return (
     <div className="min-h-screen bg-neutral-50 flex items-center justify-center py-12">
       <div className="container max-w-xl">
@@ -176,19 +180,19 @@ export default function RegisterPage() {
           {/* Header */}
           <div className="text-center mb-8">
             <h1 className="text-3xl font-bold text-neutral-900 mb-2">
-              Register Here
+              Create Your Account
             </h1>
             <p className="text-neutral-600">
-              Sign up to your Handcrafted Haven account today!
+              Join Handcrafted Haven and discover unique artisan treasures
             </p>
           </div>
 
           {/* Success Message */}
           {isSuccess && (
             <div className="mb-6 p-4 bg-secondary-50 border border-secondary-200 rounded-lg">
-              <div className="flex items-start">
+              <div className="flex items-center">
                 <svg
-                  className="w-5 h-5 text-secondary-600 mt-0.5 mr-3"
+                  className="w-5 h-5 text-secondary-600 mr-2"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                 >
@@ -198,15 +202,9 @@ export default function RegisterPage() {
                     clipRule="evenodd"
                   />
                 </svg>
-                <div>
-                  <h3 className="text-sm font-medium text-secondary-800">
-                    Registration Successful!
-                  </h3>
-                  <p className="text-sm text-secondary-700 mt-1">
-                    Your account has been created. You can now sign in to start
-                    shopping.
-                  </p>
-                </div>
+                <p className="text-secondary-800 font-medium">
+                  Account created successfully! Redirecting to login...
+                </p>
               </div>
             </div>
           )}
@@ -214,9 +212,9 @@ export default function RegisterPage() {
           {/* General Error Message */}
           {errors.general && (
             <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg">
-              <div className="flex items-start">
+              <div className="flex items-center">
                 <svg
-                  className="w-5 h-5 text-red-600 mt-0.5 mr-3"
+                  className="w-5 h-5 text-red-600 mr-2"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                 >
@@ -226,12 +224,7 @@ export default function RegisterPage() {
                     clipRule="evenodd"
                   />
                 </svg>
-                <div>
-                  <h3 className="text-sm font-medium text-red-800">
-                    Registration Failed
-                  </h3>
-                  <p className="text-sm text-red-700 mt-1">{errors.general}</p>
-                </div>
+                <p className="text-red-800 text-sm">{errors.general}</p>
               </div>
             </div>
           )}
@@ -243,128 +236,89 @@ export default function RegisterPage() {
                 htmlFor="firstName"
                 className="block text-sm font-medium text-neutral-700 mb-2"
               >
-                First Name <span className="text-red-500">*</span>
+                First Name
               </label>
               <input
                 name="firstName"
                 type="text"
                 id="firstName"
                 value={formData.firstName}
-                onChange={handleChange}
+                onChange={handleInputChange}
                 className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors ${
                   errors.firstName
-                    ? "border-red-300 bg-red-50"
+                    ? "border-red-500 focus:ring-red-500"
                     : "border-neutral-300"
                 }`}
                 placeholder="Enter your first name"
-                disabled={isLoading}
+                disabled={isLoading || isSuccess}
+                required
                 aria-invalid={errors.firstName ? "true" : "false"}
-                aria-describedby={
-                  errors.firstName ? "firstName-error" : undefined
-                }
+                aria-describedby={errors.firstName ? "firstName-error" : undefined}
               />
               {errors.firstName && (
-                <p
-                  id="firstName-error"
-                  className="mt-1 text-sm text-red-600 flex items-center"
-                >
-                  <svg
-                    className="w-4 h-4 mr-1"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
+                <p id="firstName-error" className="mt-1 text-sm text-red-600">
                   {errors.firstName}
                 </p>
               )}
             </div>
+
             <div>
               <label
                 htmlFor="lastName"
                 className="block text-sm font-medium text-neutral-700 mb-2"
               >
-                Last Name <span className="text-red-500">*</span>
+                Last Name
               </label>
               <input
                 name="lastName"
                 type="text"
                 id="lastName"
                 value={formData.lastName}
-                onChange={handleChange}
+                onChange={handleInputChange}
                 className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors ${
                   errors.lastName
-                    ? "border-red-300 bg-red-50"
+                    ? "border-red-500 focus:ring-red-500"
                     : "border-neutral-300"
                 }`}
                 placeholder="Enter your last name"
-                disabled={isLoading}
+                disabled={isLoading || isSuccess}
+                required
                 aria-invalid={errors.lastName ? "true" : "false"}
-                aria-describedby={
-                  errors.lastName ? "lastName-error" : undefined
-                }
+                aria-describedby={errors.lastName ? "lastName-error" : undefined}
               />
               {errors.lastName && (
-                <p
-                  id="lastName-error"
-                  className="mt-1 text-sm text-red-600 flex items-center"
-                >
-                  <svg
-                    className="w-4 h-4 mr-1"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
+                <p id="lastName-error" className="mt-1 text-sm text-red-600">
                   {errors.lastName}
                 </p>
               )}
             </div>
+
             <div>
               <label
                 htmlFor="email"
                 className="block text-sm font-medium text-neutral-700 mb-2"
               >
-                Email Address <span className="text-red-500">*</span>
+                Email Address
               </label>
               <input
                 type="email"
                 name="email"
                 id="email"
                 value={formData.email}
-                onChange={handleChange}
+                onChange={handleInputChange}
                 className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors ${
-                  errors.email ? "border-red-300 bg-red-50" : "border-neutral-300"
+                  errors.email
+                    ? "border-red-500 focus:ring-red-500"
+                    : "border-neutral-300"
                 }`}
-                placeholder="you@example.com"
-                disabled={isLoading}
+                placeholder="your.email@example.com"
+                disabled={isLoading || isSuccess}
+                required
                 aria-invalid={errors.email ? "true" : "false"}
                 aria-describedby={errors.email ? "email-error" : undefined}
               />
               {errors.email && (
-                <p
-                  id="email-error"
-                  className="mt-1 text-sm text-red-600 flex items-center"
-                >
-                  <svg
-                    className="w-4 h-4 mr-1"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
+                <p id="email-error" className="mt-1 text-sm text-red-600">
                   {errors.email}
                 </p>
               )}
@@ -375,88 +329,61 @@ export default function RegisterPage() {
                 htmlFor="password"
                 className="block text-sm font-medium text-neutral-700 mb-2"
               >
-                Password <span className="text-red-500">*</span>
+                Password
               </label>
               <input
                 type="password"
                 name="password"
                 id="password"
                 value={formData.password}
-                onChange={handleChange}
+                onChange={handleInputChange}
                 className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors ${
                   errors.password
-                    ? "border-red-300 bg-red-50"
+                    ? "border-red-500 focus:ring-red-500"
                     : "border-neutral-300"
                 }`}
-                placeholder="Create a password"
-                disabled={isLoading}
+                placeholder="Create a strong password"
+                disabled={isLoading || isSuccess}
+                required
                 aria-invalid={errors.password ? "true" : "false"}
-                aria-describedby={errors.password ? "password-error" : undefined}
+                aria-describedby={errors.password ? "password-error password-requirements" : "password-requirements"}
               />
               {errors.password && (
-                <p
-                  id="password-error"
-                  className="mt-1 text-sm text-red-600 flex items-center"
-                >
-                  <svg
-                    className="w-4 h-4 mr-1"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
+                <p id="password-error" className="mt-1 text-sm text-red-600">
                   {errors.password}
                 </p>
               )}
-              <p className="mt-1 text-xs text-neutral-500">
+              <p id="password-requirements" className="mt-1 text-xs text-neutral-500">
                 Must be 8+ characters with uppercase, lowercase, and number
               </p>
             </div>
+
             <div>
               <label
                 htmlFor="confirmPassword"
                 className="block text-sm font-medium text-neutral-700 mb-2"
               >
-                Confirm Password <span className="text-red-500">*</span>
+                Confirm Password
               </label>
               <input
                 type="password"
                 name="confirmPassword"
                 id="confirmPassword"
                 value={formData.confirmPassword}
-                onChange={handleChange}
+                onChange={handleInputChange}
                 className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors ${
                   errors.confirmPassword
-                    ? "border-red-300 bg-red-50"
+                    ? "border-red-500 focus:ring-red-500"
                     : "border-neutral-300"
                 }`}
                 placeholder="Confirm your password"
-                disabled={isLoading}
+                disabled={isLoading || isSuccess}
+                required
                 aria-invalid={errors.confirmPassword ? "true" : "false"}
-                aria-describedby={
-                  errors.confirmPassword ? "confirmPassword-error" : undefined
-                }
+                aria-describedby={errors.confirmPassword ? "confirmPassword-error" : undefined}
               />
               {errors.confirmPassword && (
-                <p
-                  id="confirmPassword-error"
-                  className="mt-1 text-sm text-red-600 flex items-center"
-                >
-                  <svg
-                    className="w-4 h-4 mr-1"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
+                <p id="confirmPassword-error" className="mt-1 text-sm text-red-600">
                   {errors.confirmPassword}
                 </p>
               )}
@@ -472,9 +399,9 @@ export default function RegisterPage() {
                 name="interest"
                 id="interest"
                 value={formData.interest}
-                onChange={handleChange}
+                onChange={handleInputChange}
                 className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
-                disabled={isLoading}
+                disabled={isLoading || isSuccess}
               >
                 <option value="">Select your area of interest</option>
                 <option value="jewelry">Jewelry & Accessories</option>
@@ -490,8 +417,8 @@ export default function RegisterPage() {
 
             <button
               type="submit"
-              disabled={isLoading}
-              className="w-full bg-primary-600 text-white py-3 px-6 rounded-lg hover:bg-primary-700 transition-colors font-semibold disabled:bg-neutral-300 disabled:cursor-not-allowed disabled:text-neutral-500 flex items-center justify-center"
+              disabled={isLoading || isSuccess}
+              className="w-full bg-primary-600 text-white py-3 px-6 rounded-lg hover:bg-primary-700 transition-colors font-semibold disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
             >
               {isLoading ? (
                 <>
@@ -518,7 +445,7 @@ export default function RegisterPage() {
                   Creating Account...
                 </>
               ) : (
-                "Sign Up"
+                "Create Account"
               )}
             </button>
           </form>
@@ -534,7 +461,8 @@ export default function RegisterPage() {
           <div className="space-y-3">
             <button
               type="button"
-              disabled={isLoading}
+              onClick={() => handleSocialLogin("Google")}
+              disabled={isLoading || isSuccess}
               className="w-full flex items-center justify-center px-4 py-3 border border-neutral-300 rounded-lg hover:bg-neutral-50 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             >
               <span className="mr-2">🔍</span>
@@ -542,7 +470,8 @@ export default function RegisterPage() {
             </button>
             <button
               type="button"
-              disabled={isLoading}
+              onClick={() => handleSocialLogin("Facebook")}
+              disabled={isLoading || isSuccess}
               className="w-full flex items-center justify-center px-4 py-3 border border-neutral-300 rounded-lg hover:bg-neutral-50 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             >
               <span className="mr-2">📘</span>
