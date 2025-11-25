@@ -1,19 +1,19 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import Link from 'next/link';
-import { useCart } from '@/contexts/CartContext';
+import { useState } from "react";
+import Link from "next/link";
+import { useCart } from "@/contexts/CartContext";
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { itemCount } = useCart();
 
   const navigation = [
-    { name: 'Home', href: '/' },
-    { name: 'Browse Products', href: '/products' },
-    { name: 'Artisans', href: '/artisans' },
-    { name: 'Categories', href: '/categories' },
-    { name: 'About', href: '/about' },
+    { name: "Home", href: "/" },
+    { name: "Browse Products", href: "/products" },
+    { name: "Artisans", href: "/artisans" },
+    { name: "Categories", href: "/categories" },
+    { name: "About", href: "/about" },
   ];
 
   return (
@@ -21,16 +21,16 @@ const Header = () => {
       <div className="container">
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
-          <div className="flex items-center">
+          <div className="flex items-center mr-11">
             <Link href="/" className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center">
+              <div className="w-10 h-10 bg-gradient-primary rounded-lg items-center justify-center hidden">
                 <span className="text-white font-bold text-xl">H</span>
               </div>
               <div>
                 <h1 className="font-display font-bold text-xl text-neutral-900">
                   Handcrafted Haven
                 </h1>
-                <p className="text-xs text-neutral-500">Artisan Marketplace</p>
+                <p className="text-xs text-neutral-900">Artisan Marketplace</p>
               </div>
             </Link>
           </div>
@@ -130,7 +130,7 @@ const Header = () => {
                   d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0l-2.5 5M7 13l2.5 5M9 21h6"
                 />
               </svg>
-              <span className="absolute -top-1 -right-1 bg-primary-700 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
+              <span className="absolute -top-1 -right-1 bg-primary-800 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
                 {itemCount}
               </span>
             </Link>
@@ -182,13 +182,23 @@ const Header = () => {
                     className="input pr-10"
                   />
                   <div className="absolute inset-y-0 right-0 flex items-center pr-3">
-                    <svg className="h-5 w-5 text-neutral-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    <svg
+                      className="h-5 w-5 text-neutral-400"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                      />
                     </svg>
                   </div>
                 </div>
               </div>
-              
+
               {/* Mobile Navigation Links */}
               <div className="px-4 space-y-1">
                 {navigation.map((item) => (
@@ -202,7 +212,7 @@ const Header = () => {
                   </Link>
                 ))}
               </div>
-              
+
               {/* Mobile Action Buttons */}
               <div className="px-4 pt-3 border-t border-neutral-200 space-y-2">
                 <Link
@@ -210,8 +220,18 @@ const Header = () => {
                   className="flex items-center justify-center space-x-2 w-full py-2 text-neutral-700 hover:text-primary-600 font-medium"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0l-2.5 5M7 13l2.5 5M9 21h6" />
+                  <svg
+                    className="h-5 w-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0l-2.5 5M7 13l2.5 5M9 21h6"
+                    />
                   </svg>
                   <span>Cart ({itemCount})</span>
                 </Link>
