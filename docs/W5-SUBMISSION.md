@@ -12,7 +12,7 @@ The group's project repository contains Next.js application artifacts with signi
 
 The group's GitHub Project Board shows continued progress with 9 active items in the backlog including placeholder replacement, broken image link fixes, learn more functionality, dead-end link resolution, and homepage card enhancements planned for completion.
 
-## 3. Meeting Summary
+## 3. Meeting Summaryte
 
 ### Participants
 
