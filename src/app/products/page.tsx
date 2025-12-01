@@ -94,7 +94,7 @@ const ProductsPage = () => {
       rating: 5,
       category: 'Candles',
       featured: true,
-      image: 'https://images.unsplash.com/photo-1583979559990-68b5d6b6f1a0?w=400&h=300&fit=crop&crop=center',
+      image: 'https://images.unsplash.com/photo-1564594434538-e5b2bf3e3c4f?w=400&h=300&fit=crop&crop=center',
       description: 'Hand-poured soy wax candle with natural lavender essential oil. Creates a calming ambiance with up to 50 hours of burn time.',
     },
     {
@@ -194,7 +194,7 @@ const ProductsPage = () => {
       price: 30.00,
       rating: 4,
       category: 'Candles',
-      image: 'https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=400&h=300&fit=crop&crop=center',
+      image: 'https://images.unsplash.com/photo-1603006905003-be475563bc59?w=400&h=300&fit=crop&crop=center',
       description: 'Energizing citrus and sage scented candle in a reusable amber glass jar.',
     },
     {
