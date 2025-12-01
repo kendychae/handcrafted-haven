@@ -269,7 +269,7 @@ export const productsData = [
     reviewCount: 17,
     category: 'Prints',
     images: [
-      'https://images.unsplash.com/photo-1549887534-1541e9326642?w=600&h=600&fit=crop&crop=center',
+      'https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=600&h=600&fit=crop&crop=center',
     ],
     description: 'Vibrant abstract watercolor art print with flowing colors and modern aesthetic.',
     materials: ['Premium matte paper', 'Archival inks'],
@@ -290,7 +290,7 @@ export const productsData = [
     reviewCount: 25,
     category: 'Woodwork',
     images: [
-      'https://images.unsplash.com/photo-1599843477551-2233eb53e7e5?w=600&h=600&fit=crop&crop=center',
+      'https://images.unsplash.com/photo-1556909172-54557c7e4fb7?w=600&h=600&fit=crop&crop=center',
     ],
     description: 'Set of three hand-carved wooden cooking spoons from sustainable cherry wood.',
     materials: ['Cherry wood', 'Food-safe mineral oil finish'],
@@ -311,7 +311,7 @@ export const productsData = [
     reviewCount: 38,
     category: 'Candles',
     images: [
-      'https://images.unsplash.com/photo-1602874801006-e24aa4a93e41?w=600&h=600&fit=crop&crop=center&sat=-20',
+      'https://images.unsplash.com/photo-1603006905003-be475563bc59?w=600&h=600&fit=crop&crop=center',
     ],
     description: 'Refreshing eucalyptus and mint scented candle perfect for bathrooms and spa-like settings.',
     materials: ['Coconut-soy wax blend', 'Essential oils', 'Wood wick'],
@@ -353,7 +353,7 @@ export const productsData = [
     reviewCount: 20,
     category: 'Textiles',
     images: [
-      'https://images.unsplash.com/photo-1527168027773-0cc890c4f42e?w=600&h=600&fit=crop&crop=center',
+      'https://images.unsplash.com/photo-1616486029423-aaa4789e8c9a?w=600&h=600&fit=crop&crop=center',
     ],
     description: 'Large macramé wall hanging with natural cotton rope in boho style.',
     materials: ['100% Cotton rope', 'Driftwood rod'],
@@ -395,7 +395,7 @@ export const productsData = [
     reviewCount: 27,
     category: 'Candles',
     images: [
-      'https://images.unsplash.com/photo-1610802947235-ad545eb2f6e5?w=600&h=600&fit=crop&crop=center',
+      'https://images.unsplash.com/photo-1602874801006-e24aa4a93e41?w=600&h=600&fit=crop&crop=center',
     ],
     description: 'Energizing citrus and sage scented candle in a reusable amber glass jar.',
     materials: ['Soy wax', 'Essential oil blend', 'Cotton wick'],
