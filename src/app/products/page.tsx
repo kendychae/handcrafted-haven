@@ -86,10 +86,131 @@ const ProductsPage = () => {
       image: 'https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=400&h=300&fit=crop&crop=center',
       description: 'Set of four unique ceramic mugs with hand-painted glazes.',
     },
+    {
+      id: 9,
+      name: 'Soy Wax Lavender Candle',
+      artist: 'Rachel Green',
+      price: 28.00,
+      rating: 5,
+      category: 'Candles',
+      featured: true,
+      image: 'https://images.unsplash.com/photo-1602874801006-e24aa4a93e41?w=400&h=300&fit=crop&crop=center',
+      description: 'Hand-poured soy wax candle with natural lavender essential oil. Creates a calming ambiance with up to 50 hours of burn time.',
+    },
+    {
+      id: 10,
+      name: 'Mountain Landscape Print',
+      artist: 'Alex Turner',
+      price: 65.00,
+      rating: 5,
+      category: 'Prints',
+      image: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=400&h=300&fit=crop&crop=center',
+      description: 'Limited edition art print of serene mountain landscape. Printed on museum-quality archival paper.',
+    },
+    {
+      id: 11,
+      name: 'Handmade Brass Earrings',
+      artist: 'Sophia Lee',
+      price: 38.00,
+      rating: 4,
+      category: 'Jewelry',
+      image: 'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=400&h=300&fit=crop&crop=center',
+      description: 'Geometric brass earrings with hammered texture and gold fill ear wires. Lightweight and hypoallergenic.',
+    },
+    {
+      id: 12,
+      name: 'Vanilla Bean Candle Set',
+      artist: 'Rachel Green',
+      price: 52.00,
+      rating: 5,
+      category: 'Candles',
+      image: 'https://images.unsplash.com/photo-1603006905003-be475563bc59?w=400&h=300&fit=crop&crop=center',
+      description: 'Set of three small vanilla bean candles perfect for gift giving or creating a cozy atmosphere.',
+    },
+    {
+      id: 13,
+      name: 'Abstract Watercolor Print',
+      artist: 'Alex Turner',
+      price: 45.00,
+      rating: 4,
+      category: 'Prints',
+      image: 'https://images.unsplash.com/photo-1549887534-1541e9326642?w=400&h=300&fit=crop&crop=center',
+      description: 'Vibrant abstract watercolor art print with flowing colors and modern aesthetic.',
+    },
+    {
+      id: 14,
+      name: 'Hand-carved Wooden Spoon Set',
+      artist: 'David Rodriguez',
+      price: 48.00,
+      rating: 5,
+      category: 'Woodwork',
+      image: 'https://images.unsplash.com/photo-1599843477551-2233eb53e7e5?w=400&h=300&fit=crop&crop=center',
+      description: 'Set of three hand-carved wooden cooking spoons from sustainable cherry wood.',
+    },
+    {
+      id: 15,
+      name: 'Eucalyptus Mint Candle',
+      artist: 'Rachel Green',
+      price: 32.00,
+      rating: 5,
+      category: 'Candles',
+      image: 'https://images.unsplash.com/photo-1602874801006-e24aa4a93e41?w=400&h=300&fit=crop&crop=center&sat=-20',
+      description: 'Refreshing eucalyptus and mint scented candle perfect for bathrooms and spa-like settings.',
+    },
+    {
+      id: 16,
+      name: 'Botanical Print Collection',
+      artist: 'Alex Turner',
+      price: 85.00,
+      rating: 5,
+      category: 'Prints',
+      image: 'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=400&h=300&fit=crop&crop=center',
+      description: 'Set of four vintage-inspired botanical illustration prints. Perfect for gallery wall.',
+    },
+    {
+      id: 17,
+      name: 'Woven Wall Hanging',
+      artist: 'Emma Thompson',
+      price: 95.00,
+      rating: 5,
+      category: 'Textiles',
+      image: 'https://images.unsplash.com/photo-1527168027773-0cc890c4f42e?w=400&h=300&fit=crop&crop=center',
+      description: 'Large macramé wall hanging with natural cotton rope in boho style.',
+    },
+    {
+      id: 18,
+      name: 'Ceramic Planter Trio',
+      artist: 'Sarah Martinez',
+      price: 72.00,
+      rating: 4,
+      category: 'Pottery',
+      image: 'https://images.unsplash.com/photo-1485955900006-10f4d324d411?w=400&h=300&fit=crop&crop=center',
+      description: 'Set of three handmade ceramic planters in graduated sizes with drainage holes.',
+    },
+    {
+      id: 19,
+      name: 'Citrus & Sage Candle',
+      artist: 'Rachel Green',
+      price: 30.00,
+      rating: 4,
+      category: 'Candles',
+      image: 'https://images.unsplash.com/photo-1610802947235-ad545eb2f6e5?w=400&h=300&fit=crop&crop=center',
+      description: 'Energizing citrus and sage scented candle in a reusable amber glass jar.',
+    },
+    {
+      id: 20,
+      name: 'Ocean Sunset Print',
+      artist: 'Alex Turner',
+      price: 55.00,
+      rating: 5,
+      category: 'Prints',
+      image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400&h=300&fit=crop&crop=center',
+      description: 'Stunning beach sunset photograph print with vibrant oranges and purples.',
+    },
   ];
 
-  const categories = ['All', 'Pottery', 'Jewelry', 'Textiles', 'Woodwork', 'Glass', 'Leather'];
-  const sortOptions = ['Featured', 'Price: Low to High', 'Price: High to Low', 'Newest', 'Best Rated'];
+  const categories = ['All', 'Pottery', 'Jewelry', 'Textiles', 'Woodwork', 'Glass', 'Leather', 'Candles', 'Prints'];
+  const sortOptions = ['Featured', 'Price: Low to High', 'Price: High to Low', 'Newest', 'Best Rated', 'Least Rated'];
 
   // State for filtering and search
   const [selectedCategory, setSelectedCategory] = useState('All');
@@ -127,6 +248,9 @@ const ProductsPage = () => {
         break;
       case 'Best Rated':
         filtered.sort((a, b) => b.rating - a.rating);
+        break;
+      case 'Least Rated':
+        filtered.sort((a, b) => a.rating - b.rating);
         break;
       case 'Featured':
       default:

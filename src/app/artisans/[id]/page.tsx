@@ -10,8 +10,8 @@ const artisansData = [
     specialty: 'Ceramic Artist',
     location: 'Portland, Oregon',
     bio: 'Sarah has been crafting beautiful ceramic pieces for over 15 years. Inspired by natural forms and traditional techniques, she creates functional pottery that brings warmth to everyday life.',
-    image: '/api/placeholder/300/300',
-    coverImage: '/api/placeholder/800/400',
+    image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&h=300&fit=crop&crop=faces',
+    coverImage: 'https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=800&h=400&fit=crop&crop=center',
     yearsExperience: 15,
     productsCount: 47,
     rating: 4.9,
@@ -32,8 +32,8 @@ const artisansData = [
     specialty: 'Metal & Jewelry',
     location: 'San Francisco, CA',
     bio: 'Michael specializes in contemporary jewelry design using sustainable metals and ethically sourced gemstones.',
-    image: '/api/placeholder/300/300',
-    coverImage: '/api/placeholder/800/400',
+    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=faces',
+    coverImage: 'https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=800&h=400&fit=crop&crop=center',
     yearsExperience: 12,
     productsCount: 34,
     rating: 4.8,
@@ -57,7 +57,7 @@ const getArtisanProducts = (artisanId: number) => [
     id: 1,
     name: 'Handwoven Ceramic Bowl',
     price: 45.00,
-    image: '/api/placeholder/250/250',
+    image: 'https://images.unsplash.com/photo-1610701596007-11502861dcfa?w=250&h=250&fit=crop&crop=center',
     rating: 5,
     category: 'Pottery'
   },
@@ -65,7 +65,7 @@ const getArtisanProducts = (artisanId: number) => [
     id: 2,
     name: 'Ceramic Coffee Mug Set',
     price: 32.00,
-    image: '/api/placeholder/250/250',
+    image: 'https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=250&h=250&fit=crop&crop=center',
     rating: 5,
     category: 'Pottery'
   },
@@ -73,7 +73,7 @@ const getArtisanProducts = (artisanId: number) => [
     id: 3,
     name: 'Decorative Vase',
     price: 68.00,
-    image: '/api/placeholder/250/250',
+    image: 'https://images.unsplash.com/photo-1563241527-3004b7be0ffd?w=250&h=250&fit=crop&crop=center',
     rating: 4,
     category: 'Pottery'
   }

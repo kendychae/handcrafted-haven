@@ -318,7 +318,7 @@ const ArtisansPage = () => {
           <Link href="/become-seller" className="btn-primary">
             Apply to Sell
           </Link>
-          <Link href="/artisan-handbook" className="btn-outline">
+          <Link href="/about" className="btn-outline">
             Learn More
           </Link>
         </div>

@@ -93,6 +93,18 @@ export default function Home() {
       icon: "🪵",
       description: "Furniture and decorative wooden items",
     },
+    {
+      name: "Candles",
+      href: "/categories/candles",
+      icon: "🕯️",
+      description: "Hand-poured candles with natural scents",
+    },
+    {
+      name: "Prints",
+      href: "/categories/prints",
+      icon: "🖼️",
+      description: "Museum-quality art prints and photography",
+    },
   ];
 
   return (

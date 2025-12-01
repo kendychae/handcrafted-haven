@@ -122,7 +122,9 @@ const Footer = () => {
               </span>
               <div className="flex space-x-4">
                 <Link
-                  href="#"
+                  href="https://instagram.com/handcraftedhaven"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-neutral-400 hover:text-primary-600 transition-colors duration-200"
                   aria-label="Instagram"
                 >
@@ -135,7 +137,9 @@ const Footer = () => {
                   </svg>
                 </Link>
                 <Link
-                  href="#"
+                  href="https://facebook.com/handcraftedhaven"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-neutral-400 hover:text-primary-600 transition-colors duration-200"
                   aria-label="Facebook"
                 >
@@ -148,7 +152,9 @@ const Footer = () => {
                   </svg>
                 </Link>
                 <Link
-                  href="#"
+                  href="https://pinterest.com/handcraftedhaven"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-neutral-400 hover:text-primary-600 transition-colors duration-200"
                   aria-label="Pinterest"
                 >
@@ -161,7 +167,9 @@ const Footer = () => {
                   </svg>
                 </Link>
                 <Link
-                  href="#"
+                  href="https://twitter.com/handcraftedhaven"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-neutral-400 hover:text-primary-600 transition-colors duration-200"
                   aria-label="Twitter"
                 >
