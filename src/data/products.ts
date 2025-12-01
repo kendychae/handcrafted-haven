@@ -184,7 +184,7 @@ export const productsData = [
     reviewCount: 34,
     category: 'Candles',
     images: [
-      'https://images.unsplash.com/photo-1602874801006-e24aa4a93e41?w=600&h=600&fit=crop&crop=center',
+      'https://images.unsplash.com/photo-1583979559990-68b5d6b6f1a0?w=600&h=600&fit=crop&crop=center',
     ],
     description: 'Hand-poured soy wax candle with natural lavender essential oil. Creates a calming ambiance with up to 50 hours of burn time.',
     materials: ['100% Soy wax', 'Lavender essential oil', 'Cotton wick'],
@@ -395,7 +395,7 @@ export const productsData = [
     reviewCount: 27,
     category: 'Candles',
     images: [
-      'https://images.unsplash.com/photo-1602874801006-e24aa4a93e41?w=600&h=600&fit=crop&crop=center',
+      'https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=600&h=600&fit=crop&crop=center',
     ],
     description: 'Energizing citrus and sage scented candle in a reusable amber glass jar.',
     materials: ['Soy wax', 'Essential oil blend', 'Cotton wick'],

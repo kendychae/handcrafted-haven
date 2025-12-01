@@ -18,7 +18,7 @@ The group's GitHub Project Board currently contains 12 active items across multi
 
 - Kendahl Bingham (Team Lead)
 - Dominic Odeh Abah
-- Nsisong Gabriel Johnson  
+- Nsisong Gabriel Johnson
 - Manuel Mario Zamalloa Llantoy
 
 ### Challenge
