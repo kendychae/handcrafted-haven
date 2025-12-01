@@ -94,7 +94,7 @@ const ProductsPage = () => {
       rating: 5,
       category: 'Candles',
       featured: true,
-      image: 'https://images.unsplash.com/photo-1564594434538-e5b2bf3e3c4f?w=400&h=300&fit=crop&crop=center',
+      image: 'https://images.unsplash.com/photo-1603006905003-be475563bc59?w=400&h=300&fit=crop&crop=center',
       description: 'Hand-poured soy wax candle with natural lavender essential oil. Creates a calming ambiance with up to 50 hours of burn time.',
     },
     {
