@@ -33,7 +33,7 @@ body {
 @layer components {
   /* Button Styles */
   .btn-primary {
-    @apply bg-primary-800 hover:bg-primary-800 active:bg-primary-900 text-white px-6 py-3 rounded-lg font-medium transition-all duration-200 shadow-sm hover:shadow-md focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2;
+    @apply bg-primary-700 hover:bg-primary-800 active:bg-primary-900 text-white px-6 py-3 rounded-lg font-medium transition-all duration-200 shadow-sm hover:shadow-md focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2;
   }
 
   .btn-secondary {
@@ -41,11 +41,11 @@ body {
   }
 
   .btn-outline {
-    @apply border-2 border-primary-700 text-primary-800 hover:bg-primary-700 hover:text-white px-6 py-3 rounded-lg font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2;
+    @apply border-2 border-primary-700 text-primary-900 hover:bg-primary-700 hover:text-white px-6 py-3 rounded-lg font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2;
   }
 
   .btn-ghost {
-    @apply text-primary-800 hover:bg-primary-100 px-6 py-3 rounded-lg font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2;
+    @apply text-primary-900 hover:bg-primary-100 px-6 py-3 rounded-lg font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2;
   }
 
   /* Card Styles */
@@ -92,15 +92,15 @@ body {
   }
 
   .body-large {
-    @apply text-lg text-neutral-800 leading-relaxed;
+    @apply text-lg text-neutral-900 leading-relaxed;
   }
 
   .body {
-    @apply text-base text-neutral-800 leading-relaxed;
+    @apply text-base text-neutral-900 leading-relaxed;
   }
 
   .body-small {
-    @apply text-sm text-neutral-700;
+    @apply text-sm text-neutral-800;
   }
 
   /* Layout */
@@ -114,24 +114,24 @@ body {
 
   /* Navigation */
   .nav-link {
-    @apply text-neutral-800 hover:text-primary-800 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200;
+    @apply text-neutral-900 hover:text-primary-900 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200;
   }
 
   .nav-link-active {
-    @apply text-primary-800 bg-primary-100 px-3 py-2 rounded-md text-sm font-medium;
+    @apply text-primary-900 bg-primary-100 px-3 py-2 rounded-md text-sm font-medium;
   }
 
   /* Utilities */
   .gradient-primary {
-    @apply bg-gradient-to-r from-primary-900 to-accent-900;
+    @apply bg-gradient-to-r from-primary-800 to-accent-900;
   }
 
   .gradient-secondary {
-    @apply bg-gradient-to-r from-secondary-700 to-primary-700;
+    @apply bg-gradient-to-r from-secondary-800 to-primary-800;
   }
 
   .text-gradient {
-    @apply bg-gradient-to-r from-primary-700 to-accent-700 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-primary-800 to-accent-800 bg-clip-text text-transparent;
   }
 
   /* Focus styles for accessibility */
