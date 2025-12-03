@@ -308,7 +308,7 @@ const ProductsPage = () => {
                 key={category}
                 onClick={() => setSelectedCategory(category)}
                 className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${category === selectedCategory
-                    ? 'bg-primary-600 text-white'
+                    ? 'bg-primary-800 text-white'
                     : 'bg-neutral-100 text-neutral-700 hover:bg-neutral-200'
                   }`}
               >
@@ -364,7 +364,7 @@ const ProductsPage = () => {
 
                 {/* Featured Badge */}
                 {product.featured && (
-                  <div className="absolute top-4 left-4 bg-primary-600 text-white text-xs px-2 py-1 rounded-full">
+                  <div className="absolute top-4 left-4 bg-primary-800 text-white text-xs px-2 py-1 rounded-full">
                     Featured
                   </div>
                 )}
@@ -394,7 +394,7 @@ const ProductsPage = () => {
 
               <div className="p-6">
                 <div className="mb-2">
-                  <span className="inline-block bg-primary-100 text-primary-700 text-xs px-2 py-1 rounded-full">
+                  <span className="inline-block bg-primary-100 text-primary-900 font-bold text-xs px-2 py-1 rounded-full">
                     {product.category}
                   </span>
                 </div>

@@ -338,6 +338,7 @@ export default function Home() {
                   </button>
                 </div>
 
+                {/* Featured Handcrafted Items Cards */}
                 <div className="p-6">
                   <div className="mb-2">
                     <span className="inline-block bg-primary-100 text-primary-900 font-bold text-xs px-2 py-1 rounded-full">
