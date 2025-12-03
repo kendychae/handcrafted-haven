@@ -424,7 +424,9 @@ const ProductsPage = () => {
                 <div className="flex justify-between items-center">
                   <span className="heading-4 text-primary-600">${product.price}</span>
                   <button className="btn-ghost text-sm px-4 py-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                    Quick View
+                    <div className="hidden group-hover:block">  
+                      Quick View
+                    </div>
                   </button>
                 </div>
               </div>

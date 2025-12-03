@@ -126,7 +126,7 @@ const ArtisansPage = () => {
       <div className="gradient-primary rounded-2xl p-8 mb-12 text-white">
         <div className="flex flex-col lg:flex-row items-center gap-8">
           <div className="flex-1">
-            <div className="inline-block bg-white/20 text-white text-sm px-3 py-1 rounded-full mb-4">
+            <div className="inline-block bg-primary-100 text-primary-900 text-sm px-3 py-1 rounded-full mb-4">
               Featured Artisan
             </div>
             <h2 className="heading-2 mb-4 text-white">Sarah Martinez</h2>
