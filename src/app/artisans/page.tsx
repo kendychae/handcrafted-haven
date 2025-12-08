@@ -210,11 +210,12 @@ const ArtisansPage = () => {
               View Profile
             </Link>
           </div>
-          <div className="w-64 h-64 bg-white/20 rounded-2xl flex items-center justify-center">
-            <div className="text-center">
-              <div className="text-8xl mb-4">👩‍🎨</div>
-              <span className="text-white/80">Profile Photo</span>
-            </div>
+          <div className="w-64 h-64 rounded-2xl overflow-hidden bg-white/10 flex-shrink-0">
+            <img
+              src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&h=300&fit=crop&crop=faces"
+              alt="Sarah Martinez"
+              className="w-full h-full object-cover"
+            />
           </div>
         </div>
       </div>
