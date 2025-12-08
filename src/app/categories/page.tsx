@@ -9,66 +9,58 @@ export const metadata: Metadata = {
 const categories = [
   {
     id: 1,
-    name: 'Jewelry & Accessories',
+    name: 'Jewelry',
     description: 'Handcrafted rings, necklaces, earrings, and unique accessories',
-    image: '/api/placeholder/400/300',
-    productCount: 145,
+    productCount: 2,
     color: 'from-rose-400 to-pink-500'
   },
   {
     id: 2,
-    name: 'Ceramics & Pottery',
+    name: 'Pottery',
     description: 'Beautiful handmade bowls, vases, mugs, and decorative pieces',
-    image: '/api/placeholder/400/300',
-    productCount: 89,
+    productCount: 4,
     color: 'from-amber-400 to-orange-500'
   },
   {
     id: 3,
-    name: 'Textiles & Fiber Arts',
+    name: 'Textiles',
     description: 'Woven goods, knitted items, quilts, and fabric creations',
-    image: '/api/placeholder/400/300',
-    productCount: 67,
+    productCount: 2,
     color: 'from-blue-400 to-indigo-500'
   },
   {
     id: 4,
-    name: 'Woodwork & Furniture',
+    name: 'Woodwork',
     description: 'Custom furniture, cutting boards, decorative wood pieces',
-    image: '/api/placeholder/400/300',
-    productCount: 52,
+    productCount: 2,
     color: 'from-green-400 to-emerald-500'
   },
   {
     id: 5,
-    name: 'Art & Paintings',
+    name: 'Prints',
     description: 'Original artwork, prints, illustrations, and wall art',
-    image: '/api/placeholder/400/300',
-    productCount: 123,
+    productCount: 4,
     color: 'from-purple-400 to-violet-500'
   },
   {
     id: 6,
-    name: 'Home & Garden',
-    description: 'Decorative items, planters, candles, and home essentials',
-    image: '/api/placeholder/400/300',
-    productCount: 78,
+    name: 'Candles',
+    description: 'Hand-poured candles with natural scents and essentials oils',
+    productCount: 4,
     color: 'from-teal-400 to-cyan-500'
   },
   {
     id: 7,
-    name: 'Leather Goods',
+    name: 'Leather',
     description: 'Handcrafted bags, wallets, belts, and leather accessories',
-    image: '/api/placeholder/400/300',
-    productCount: 34,
+    productCount: 1,
     color: 'from-yellow-400 to-amber-500'
   },
   {
     id: 8,
-    name: 'Glass & Metalwork',
-    description: 'Blown glass, stained glass, metal sculptures, and jewelry',
-    image: '/api/placeholder/400/300',
-    productCount: 41,
+    name: 'Glass',
+    description: 'Blown glass, stained glass, and decorative glass pieces',
+    productCount: 1,
     color: 'from-slate-400 to-gray-500'
   }
 ];

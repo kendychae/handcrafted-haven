@@ -1,13 +1,53 @@
-import type { Metadata } from 'next';
+'use client';
 
-export const metadata: Metadata = {
-  title: 'Become a Seller - Handcrafted Haven',
-  description: 'Join our marketplace and start selling your handcrafted goods to customers who appreciate unique, artisan-made products.',
-};
+import { useState } from 'react';
 
 export default function BecomeSellerPage() {
+  const [showConfirmation, setShowConfirmation] = useState(false);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    specialty: '',
+    experience: '',
+    description: ''
+  });
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setShowConfirmation(true);
+    // Reset form
+    setFormData({
+      name: '',
+      email: '',
+      specialty: '',
+      experience: '',
+      description: ''
+    });
+    // Hide confirmation after 5 seconds
+    setTimeout(() => setShowConfirmation(false), 5000);
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
   return (
     <div className="min-h-screen bg-neutral-50">
+      {/* Confirmation Banner */}
+      {showConfirmation && (
+        <div className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 animate-slide-up">
+          <div className="bg-green-600 text-white px-8 py-4 rounded-lg shadow-lg flex items-center space-x-3">
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span className="font-medium">Application submitted successfully! We'll contact you within 2-3 business days.</span>
+          </div>
+        </div>
+      )}
+      
       <div className="container py-12">
         {/* Hero Section */}
         <div className="text-center mb-16">
@@ -120,7 +160,7 @@ export default function BecomeSellerPage() {
         {/* Application Form Section */}
         <div className="max-w-2xl mx-auto bg-white rounded-lg shadow-sm border border-neutral-200 p-8">
           <h2 className="text-2xl font-bold text-neutral-900 mb-6 text-center">Ready to Start Selling?</h2>
-          <form className="space-y-6">
+          <form className="space-y-6" onSubmit={handleSubmit}>
             <div className="grid md:grid-cols-2 gap-4">
               <div>
                 <label htmlFor="firstName" className="block text-sm font-medium text-neutral-700 mb-2">

@@ -53,7 +53,7 @@ const ArtisansPage = () => {
     },
     {
       id: 5,
-      name: 'Lisa Park',
+      name: 'Maria Santos',
       specialty: 'Glass Artist',
       location: 'Seattle, WA',
       yearsExperience: 10,
@@ -73,9 +73,54 @@ const ArtisansPage = () => {
       rating: 4.8,
       reviewsCount: 167,
     },
+    {
+      id: 7,
+      name: 'Olivia Park',
+      specialty: 'Painter',
+      location: 'Brooklyn, NY',
+      yearsExperience: 10,
+      description: 'Creating vibrant paintings and art inspired by urban landscapes.',
+      productsCount: 25,
+      rating: 4.7,
+      reviewsCount: 87,
+    },
+    {
+      id: 8,
+      name: 'Rachel Green',
+      specialty: 'Candle Maker',
+      location: 'Charleston, SC',
+      yearsExperience: 7,
+      description: 'Hand-pouring artisanal candles with natural soy wax and essential oils.',
+      productsCount: 30,
+      rating: 4.9,
+      reviewsCount: 203,
+      featured: true,
+    },
+    {
+      id: 9,
+      name: 'Alex Turner',
+      specialty: 'Print Artist',
+      location: 'Portland, OR',
+      yearsExperience: 9,
+      description: 'Creating stunning art prints and illustrations with contemporary styles.',
+      productsCount: 27,
+      rating: 4.8,
+      reviewsCount: 124,
+    },
+    {
+      id: 10,
+      name: 'Sophie Laurent',
+      specialty: 'Botanical Artist',
+      location: 'Asheville, NC',
+      yearsExperience: 11,
+      description: 'Beautiful botanical prints and nature-inspired artwork.',
+      productsCount: 21,
+      rating: 4.9,
+      reviewsCount: 95,
+    },
   ];
 
-  const specialties = ['All', 'Ceramic Artist', 'Jewelry Designer', 'Textile Artist', 'Woodworker', 'Glass Artist', 'Leather Craftsman'];
+  const specialties = ['All', 'Ceramic Artist', 'Jewelry Designer', 'Textile Artist', 'Woodworker', 'Glass Artist', 'Leather Craftsman', 'Painter', 'Candle Maker', 'Print Artist', 'Botanical Artist'];
   const sortOptions = ['Featured', 'Rating', 'Experience', 'Products', 'Location'];
 
   // State for filtering and sorting

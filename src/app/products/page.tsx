@@ -139,13 +139,13 @@ const ProductsPage = () => {
     },
     {
       id: 14,
-      name: 'Hand-carved Wooden Spoon Set',
+      name: 'Hand-crafted Wooden Kitchen Table',
       artist: 'David Rodriguez',
       price: 48.00,
       rating: 5,
       category: 'Woodwork',
       image: 'https://images.unsplash.com/photo-1556909172-54557c7e4fb7?w=400&h=300&fit=crop&crop=center',
-      description: 'Set of three hand-carved wooden cooking spoons from sustainable cherry wood.',
+      description: 'Beautiful handcrafted small kitchen table made from sustainable light-colored cherry wood. Perfect for small dining spaces or as a charming breakfast nook centerpiece.',
     },
     {
       id: 15,
