@@ -17,7 +17,7 @@
 
 ### 1. Application URL (Vercel Deployment)
 
-**Live Website:** https://handcrafted-haven.vercel.app
+**Live Website:** https://handcrafted-haven-kendahls-projects.vercel.app
 
 _The application is fully deployed and functional on the Vercel platform. All features are working correctly._
 
