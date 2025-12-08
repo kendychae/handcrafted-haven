@@ -16,6 +16,7 @@ const ArtisansPage = () => {
       rating: 4.9,
       reviewsCount: 127,
       featured: true,
+      image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&h=300&fit=crop&crop=faces',
     },
     {
       id: 2,
@@ -27,6 +28,7 @@ const ArtisansPage = () => {
       productsCount: 18,
       rating: 5.0,
       reviewsCount: 89,
+      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=faces',
     },
     {
       id: 3,
@@ -38,6 +40,7 @@ const ArtisansPage = () => {
       productsCount: 32,
       rating: 4.8,
       reviewsCount: 156,
+      image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=300&h=300&fit=crop&crop=faces',
     },
     {
       id: 4,
@@ -50,6 +53,7 @@ const ArtisansPage = () => {
       rating: 4.9,
       reviewsCount: 203,
       featured: true,
+      image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=300&h=300&fit=crop&crop=faces',
     },
     {
       id: 5,
@@ -61,6 +65,7 @@ const ArtisansPage = () => {
       productsCount: 22,
       rating: 4.7,
       reviewsCount: 94,
+      image: 'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=300&h=300&fit=crop&crop=faces',
     },
     {
       id: 6,
@@ -72,6 +77,7 @@ const ArtisansPage = () => {
       productsCount: 28,
       rating: 4.8,
       reviewsCount: 167,
+      image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&crop=faces',
     },
     {
       id: 7,
@@ -83,6 +89,7 @@ const ArtisansPage = () => {
       productsCount: 25,
       rating: 4.7,
       reviewsCount: 87,
+      image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=300&h=300&fit=crop&crop=faces',
     },
     {
       id: 8,
@@ -95,6 +102,7 @@ const ArtisansPage = () => {
       rating: 4.9,
       reviewsCount: 203,
       featured: true,
+      image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=300&h=300&fit=crop&crop=faces',
     },
     {
       id: 9,
@@ -106,6 +114,7 @@ const ArtisansPage = () => {
       productsCount: 27,
       rating: 4.8,
       reviewsCount: 124,
+      image: 'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=300&h=300&fit=crop&crop=faces',
     },
     {
       id: 10,
@@ -117,6 +126,7 @@ const ArtisansPage = () => {
       productsCount: 21,
       rating: 4.9,
       reviewsCount: 95,
+      image: 'https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=300&h=300&fit=crop&crop=faces',
     },
   ];
 
@@ -273,8 +283,12 @@ const ArtisansPage = () => {
               )}
               
               {/* Profile Image */}
-              <div className="w-24 h-24 bg-gradient-to-br from-primary-100 to-primary-200 rounded-full mx-auto flex items-center justify-center mb-4">
-                <span className="text-4xl">👨‍🎨</span>
+              <div className="w-24 h-24 rounded-full mx-auto mb-4 overflow-hidden border-2 border-primary-200">
+                <img 
+                  src={artisan.image} 
+                  alt={artisan.name}
+                  className="w-full h-full object-cover"
+                />
               </div>
               
               <div className="text-center">
