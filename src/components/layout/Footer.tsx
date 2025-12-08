@@ -1,6 +1,46 @@
+'use client';
+
 import Link from "next/link";
+import { useState } from 'react';
 
 const Footer = () => {
+  const [email, setEmail] = useState('');
+  const [emailError, setEmailError] = useState('');
+  const [showSuccess, setShowSuccess] = useState(false);
+
+  const validateEmail = (email: string) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
+  const handleSubscribe = (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    // Reset states
+    setEmailError('');
+    setShowSuccess(false);
+    
+    // Validate email
+    if (!email.trim()) {
+      setEmailError('Please enter your email address');
+      return;
+    }
+    
+    if (!validateEmail(email)) {
+      setEmailError('Please enter a valid email address');
+      return;
+    }
+    
+    // Success - show confirmation
+    setShowSuccess(true);
+    setEmail('');
+    
+    // Hide success message after 5 seconds
+    setTimeout(() => {
+      setShowSuccess(false);
+    }, 5000);
+  };
+
   const footerSections = [
     {
       title: "Shop",
@@ -75,14 +115,37 @@ const Footer = () => {
                 <h4 className="font-semibold text-neutral-900 mb-3">
                   Stay Updated
                 </h4>
-                <div className="flex gap-2">
-                  <input
-                    type="email"
-                    placeholder="Enter your email"
-                    className="input flex-1"
-                  />
-                  <button className="btn-primary px-4">Subscribe</button>
-                </div>
+                
+                {/* Success Message */}
+                {showSuccess && (
+                  <div className="mb-3 bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded">
+                    <p className="text-sm font-medium">✓ Successfully subscribed!</p>
+                    <p className="text-xs">You'll receive updates on new artisans and products.</p>
+                  </div>
+                )}
+                
+                <form onSubmit={handleSubscribe} className="space-y-2">
+                  <div className="flex gap-2">
+                    <div className="flex-1">
+                      <input
+                        type="email"
+                        placeholder="Enter your email"
+                        value={email}
+                        onChange={(e) => {
+                          setEmail(e.target.value);
+                          setEmailError('');
+                        }}
+                        className={`input w-full ${emailError ? 'border-red-500 focus:ring-red-500' : ''}`}
+                      />
+                      {emailError && (
+                        <p className="text-red-500 text-xs mt-1">{emailError}</p>
+                      )}
+                    </div>
+                    <button type="submit" className="btn-primary px-4">
+                      Subscribe
+                    </button>
+                  </div>
+                </form>
                 <p className="text-xs text-neutral-900 mt-2">
                   Get updates on new artisans and exclusive products.
                 </p>

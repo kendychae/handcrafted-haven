@@ -111,8 +111,8 @@ const Header = () => {
             </Link>
           </div>
 
-          {/* Cart Icon for Tablet */}
-          <div className="hidden md:flex lg:hidden">
+          {/* Cart Icon for Mobile and Tablet */}
+          <div className="flex lg:hidden mr-2">
             <Link
               href="/cart"
               className="relative p-2 text-neutral-700 hover:text-primary-600"
@@ -130,9 +130,11 @@ const Header = () => {
                   d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0l-2.5 5M7 13l2.5 5M9 21h6"
                 />
               </svg>
-              <span className="absolute -top-1 -right-1 bg-primary-800 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
-                {itemCount}
-              </span>
+              {itemCount > 0 && (
+                <span className="absolute -top-1 -right-1 bg-primary-800 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center font-semibold animate-bounce">
+                  {itemCount}
+                </span>
+              )}
             </Link>
           </div>
 
