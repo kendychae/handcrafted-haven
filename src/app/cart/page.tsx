@@ -1,36 +1,13 @@
-import type { Metadata } from 'next';
-import Link from 'next/link';
+'use client';
 
-export const metadata: Metadata = {
-  title: 'Shopping Cart - Handcrafted Haven',
-  description: 'Review your selected handcrafted items and proceed to checkout.',
-};
+import Link from 'next/link';
+import { useCart } from '@/contexts/CartContext';
 
 export default function CartPage() {
-  // Sample cart items - in a real app, this would come from state management or API
-  const cartItems = [
-    {
-      id: 1,
-      name: 'Handwoven Ceramic Bowl',
-      artist: 'Sarah Martinez',
-      price: 45.00,
-      quantity: 1,
-      image: '/api/placeholder/150/150',
-      category: 'Pottery'
-    },
-    {
-      id: 2,
-      name: 'Sterling Silver Pendant',
-      artist: 'Michael Chen',
-      price: 89.99,
-      quantity: 2,
-      image: '/api/placeholder/150/150',
-      category: 'Jewelry'
-    }
-  ];
+  const { items: cart, updateQuantity, removeItem } = useCart();
 
-  const subtotal = cartItems.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-  const shipping = 12.99;
+  const subtotal = cart.reduce((sum: number, item: any) => sum + (item.price * item.quantity), 0);
+  const shipping = cart.length > 0 ? 12.99 : 0;
   const tax = subtotal * 0.08; // 8% tax
   const total = subtotal + shipping + tax;
 
@@ -46,7 +23,7 @@ export default function CartPage() {
             </p>
           </div>
 
-          {cartItems.length === 0 ? (
+          {cart.length === 0 ? (
             /* Empty Cart */
             <div className="bg-white rounded-lg shadow-sm border border-neutral-200 p-12 text-center">
               <div className="w-24 h-24 bg-neutral-100 rounded-full flex items-center justify-center mx-auto mb-6">
@@ -70,12 +47,12 @@ export default function CartPage() {
                 <div className="bg-white rounded-lg shadow-sm border border-neutral-200">
                   <div className="p-6 border-b border-neutral-200">
                     <h2 className="text-xl font-semibold text-neutral-900">
-                      Cart Items ({cartItems.length})
+                      Cart Items ({cart.length})
                     </h2>
                   </div>
                   
                   <div className="divide-y divide-neutral-200">
-                    {cartItems.map((item) => (
+                    {cart.map((item: any) => (
                       <div key={item.id} className="p-6">
                         <div className="flex items-start space-x-4">
                           {/* Product Image */}
@@ -99,9 +76,19 @@ export default function CartPage() {
                             <div className="flex items-center space-x-3">
                               <span className="text-sm text-neutral-600">Qty:</span>
                               <div className="flex items-center border border-neutral-300 rounded">
-                                <button className="px-3 py-1 hover:bg-neutral-50">-</button>
+                                <button 
+                                  onClick={() => updateQuantity(item.id, Math.max(0, item.quantity - 1))}
+                                  className="px-3 py-1 hover:bg-neutral-50"
+                                >
+                                  -
+                                </button>
                                 <span className="px-3 py-1 border-x border-neutral-300">{item.quantity}</span>
-                                <button className="px-3 py-1 hover:bg-neutral-50">+</button>
+                                <button 
+                                  onClick={() => updateQuantity(item.id, item.quantity + 1)}
+                                  className="px-3 py-1 hover:bg-neutral-50"
+                                >
+                                  +
+                                </button>
                               </div>
                             </div>
                           </div>
@@ -114,7 +101,10 @@ export default function CartPage() {
                             <p className="text-sm text-neutral-500 mb-3">
                               ${item.price.toFixed(2)} each
                             </p>
-                            <button className="text-sm text-red-600 hover:text-red-700">
+                            <button 
+                              onClick={() => removeItem(item.id)}
+                              className="text-sm text-red-600 hover:text-red-700"
+                            >
                               Remove
                             </button>
                           </div>

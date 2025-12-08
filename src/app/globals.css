@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap");
 
 :root {
   --foreground-rgb: 28, 25, 23;
@@ -25,7 +25,7 @@ body {
 body {
   color: rgb(var(--foreground-rgb));
   background: rgb(var(--background-start-rgb));
-  font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+  font-family: "Inter", "Segoe UI", system-ui, sans-serif;
   line-height: 1.6;
 }
 
@@ -33,107 +33,107 @@ body {
 @layer components {
   /* Button Styles */
   .btn-primary {
-    @apply bg-primary-600 hover:bg-primary-700 active:bg-primary-800 text-white px-6 py-3 rounded-lg font-medium transition-all duration-200 shadow-sm hover:shadow-md focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2;
+    @apply bg-primary-700 hover:bg-primary-800 active:bg-primary-900 text-white px-6 py-3 rounded-lg font-medium transition-all duration-200 shadow-sm hover:shadow-md focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2;
   }
-  
+
   .btn-secondary {
-    @apply bg-secondary-600 hover:bg-secondary-700 active:bg-secondary-800 text-white px-6 py-3 rounded-lg font-medium transition-all duration-200 shadow-sm hover:shadow-md focus:outline-none focus:ring-2 focus:ring-secondary-500 focus:ring-offset-2;
+    @apply bg-secondary-700 hover:bg-secondary-800 active:bg-secondary-900 text-white px-6 py-3 rounded-lg font-medium transition-all duration-200 shadow-sm hover:shadow-md focus:outline-none focus:ring-2 focus:ring-secondary-500 focus:ring-offset-2;
   }
-  
+
   .btn-outline {
-    @apply border-2 border-primary-600 text-primary-600 hover:bg-primary-600 hover:text-white px-6 py-3 rounded-lg font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2;
+    @apply border-2 border-primary-700 text-primary-900 hover:bg-primary-700 hover:text-white px-6 py-3 rounded-lg font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2;
   }
-  
+
   .btn-ghost {
-    @apply text-primary-600 hover:bg-primary-50 px-6 py-3 rounded-lg font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2;
+    @apply text-primary-900 hover:bg-primary-100 px-6 py-3 rounded-lg font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2;
   }
-  
+
   /* Card Styles */
   .card {
     @apply bg-white rounded-xl shadow-soft border border-neutral-200 overflow-hidden transition-shadow duration-200 hover:shadow-medium;
   }
-  
+
   .card-padding {
     @apply p-6;
   }
-  
+
   .product-card {
     @apply card transition-transform duration-200 hover:scale-105 cursor-pointer;
   }
-  
+
   /* Form Styles */
   .input {
     @apply w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors duration-200 placeholder-neutral-400;
   }
-  
+
   .textarea {
     @apply w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors duration-200 placeholder-neutral-400 resize-y min-h-[120px];
   }
-  
+
   .select {
     @apply w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors duration-200 bg-white;
   }
-  
+
   /* Typography */
   .heading-1 {
     @apply text-4xl md:text-5xl lg:text-6xl font-display font-bold text-neutral-900 leading-tight;
   }
-  
+
   .heading-2 {
     @apply text-3xl md:text-4xl font-display font-semibold text-neutral-900 leading-tight;
   }
-  
+
   .heading-3 {
     @apply text-2xl md:text-3xl font-display font-semibold text-neutral-900 leading-tight;
   }
-  
+
   .heading-4 {
     @apply text-xl md:text-2xl font-display font-semibold text-neutral-900;
   }
-  
+
   .body-large {
-    @apply text-lg text-neutral-700 leading-relaxed;
+    @apply text-lg text-neutral-900 leading-relaxed;
   }
-  
+
   .body {
-    @apply text-base text-neutral-700 leading-relaxed;
+    @apply text-base text-neutral-900 leading-relaxed;
   }
-  
+
   .body-small {
-    @apply text-sm text-neutral-600;
+    @apply text-sm text-neutral-800;
   }
-  
+
   /* Layout */
   .container {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
-  
+
   .section-padding {
     @apply py-16 md:py-24;
   }
-  
+
   /* Navigation */
   .nav-link {
-    @apply text-neutral-700 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200;
+    @apply text-neutral-900 hover:text-primary-900 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200;
   }
-  
+
   .nav-link-active {
-    @apply text-primary-600 bg-primary-50 px-3 py-2 rounded-md text-sm font-medium;
+    @apply text-primary-900 bg-primary-100 px-3 py-2 rounded-md text-sm font-medium;
   }
-  
+
   /* Utilities */
   .gradient-primary {
-    @apply bg-gradient-to-r from-primary-600 to-accent-600;
+    @apply bg-gradient-to-r from-primary-800 to-accent-900;
   }
-  
+
   .gradient-secondary {
-    @apply bg-gradient-to-r from-secondary-600 to-primary-600;
+    @apply bg-gradient-to-r from-secondary-800 to-primary-800;
   }
-  
+
   .text-gradient {
-    @apply bg-gradient-to-r from-primary-600 to-accent-600 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-primary-800 to-accent-800 bg-clip-text text-transparent;
   }
-  
+
   /* Focus styles for accessibility */
   .focus-ring {
     @apply focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2;
