@@ -11,6 +11,8 @@
 
 **Total Time: 7-10 minutes**
 
+**Live Application URL:** https://handcrafted-haven-kendahls-projects.vercel.app
+
 ---
 
 ## 🎬 Video Structure

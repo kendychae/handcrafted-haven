@@ -127,12 +127,12 @@ All members discuss challenges and successes together.
 
 ## 🔗 Quick Links Summary
 
-| Requirement      | URL                                            |
-| ---------------- | ---------------------------------------------- |
-| Live Application | https://handcrafted-haven.vercel.app           |
-| Project Board    | https://github.com/users/kendychae/projects/1  |
-| Repository       | https://github.com/kendychae/handcrafted-haven |
-| Demo Video       | [INSERT VIDEO URL]                             |
+| Requirement      | URL                                                       |
+| ---------------- | --------------------------------------------------------- |
+| Live Application | https://handcrafted-haven-kendahls-projects.vercel.app    |
+| Project Board    | https://github.com/users/kendychae/projects/1             |
+| Repository       | https://github.com/kendychae/handcrafted-haven            |
+| Demo Video       | [INSERT VIDEO URL]                                        |
 
 ---
 
