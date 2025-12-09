@@ -9,7 +9,7 @@
 - Nsisong Gabriel Johnson
 - Manuel Mario Zamalloa Llantoy
 
-**Submission Date:** December 3, 2025
+**Submission Date:** December 9, 2025
 
 ---
 
@@ -41,7 +41,7 @@ _The repository contains all source code, documentation, and project files. All 
 
 ### 4. Group Demonstration Video URL
 
-**Video Link:** [INSERT VIDEO URL HERE]
+**Video Link:** https://www.loom.com/share/bf54fc40659244be8aab170993e4b5fd
 
 _Video includes all team members presenting on camera. Each member demonstrates a portion of the project. Video length: 7-10 minutes._
 
@@ -127,12 +127,12 @@ All members discuss challenges and successes together.
 
 ## 🔗 Quick Links Summary
 
-| Requirement      | URL                                                    |
-| ---------------- | ------------------------------------------------------ |
-| Live Application | https://handcrafted-haven-kendahls-projects.vercel.app |
-| Project Board    | https://github.com/users/kendychae/projects/1          |
-| Repository       | https://github.com/kendychae/handcrafted-haven         |
-| Demo Video       | [INSERT VIDEO URL]                                     |
+| Requirement      | URL                                                              |
+| ---------------- | ---------------------------------------------------------------- |
+| Live Application | https://handcrafted-haven-kendahls-projects.vercel.app           |
+| Project Board    | https://github.com/users/kendychae/projects/1                    |
+| Repository       | https://github.com/kendychae/handcrafted-haven                   |
+| Demo Video       | https://www.loom.com/share/bf54fc40659244be8aab170993e4b5fd URL] |
 
 ---
 
