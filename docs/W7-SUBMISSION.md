@@ -41,7 +41,7 @@ _The repository contains all source code, documentation, and project files. All 
 
 ### 4. Group Demonstration Video URL
 
-**Video Link:** https://www.loom.com/share/bf54fc40659244be8aab170993e4b5fd
+**Video Link:** https://www.loom.com/share/9d0d9858d6fe4711bcf433462d05b55a
 
 _Video includes all team members presenting on camera. Each member demonstrates a portion of the project. Video length: 7-10 minutes._
 
@@ -127,12 +127,12 @@ All members discuss challenges and successes together.
 
 ## 🔗 Quick Links Summary
 
-| Requirement      | URL                                                              |
-| ---------------- | ---------------------------------------------------------------- |
-| Live Application | https://handcrafted-haven-kendahls-projects.vercel.app           |
-| Project Board    | https://github.com/users/kendychae/projects/1                    |
-| Repository       | https://github.com/kendychae/handcrafted-haven                   |
-| Demo Video       | https://www.loom.com/share/bf54fc40659244be8aab170993e4b5fd URL] |
+| Requirement      | URL                                                         |
+| ---------------- | ----------------------------------------------------------- |
+| Live Application | https://handcrafted-haven-kendahls-projects.vercel.app      |
+| Project Board    | https://github.com/users/kendychae/projects/1               |
+| Repository       | https://github.com/kendychae/handcrafted-haven              |
+| Demo Video       | https://www.loom.com/share/9d0d9858d6fe4711bcf433462d05b55a |
 
 ---
 
