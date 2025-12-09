@@ -127,16 +127,16 @@ All members discuss challenges and successes together.
 
 ## 🔗 Quick Links Summary
 
-| Requirement      | URL                                                       |
-| ---------------- | --------------------------------------------------------- |
-| Live Application | https://handcrafted-haven-kendahls-projects.vercel.app    |
-| Project Board    | https://github.com/users/kendychae/projects/1             |
-| Repository       | https://github.com/kendychae/handcrafted-haven            |
-| Demo Video       | [INSERT VIDEO URL]                                        |
+| Requirement      | URL                                                    |
+| ---------------- | ------------------------------------------------------ |
+| Live Application | https://handcrafted-haven-kendahls-projects.vercel.app |
+| Project Board    | https://github.com/users/kendychae/projects/1          |
+| Repository       | https://github.com/kendychae/handcrafted-haven         |
+| Demo Video       | [INSERT VIDEO URL]                                     |
 
 ---
 
 **Submitted by:** Global Saints Coders  
-**Course:** CSE 310  
+**Course:** WDD430 WEB Full-Stack Development  
 **Assignment:** W07 Project Completion  
-**Date:** December 3, 2025
+**Date:** December 9, 2025
